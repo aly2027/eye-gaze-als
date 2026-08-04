@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disclaimer — GazeSpeak</title>
+<meta name="description" content="Important disclaimer and terms of use for the GazeSpeak eye-gaze communication app for people with ALS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14202e;
+    --ink-soft:#42566b;
+    --paper:#f6f4ef;
+    --paper-2:#ffffff;
+    --teal:#0f6e6a;
+    --teal-deep:#0a4d4a;
+    --amber:#e8a13a;
+    --warn:#c0392b;
+    --line:#dcd8ce;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:-.01em}
+  a{color:var(--teal)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+  header.top{background:rgba(246,244,239,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .top-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:19px;font-weight:600}
+  .mark{width:30px;height:30px}
+  .back{font-size:14px;font-weight:500;text-decoration:none;color:var(--ink-soft)}
+  .back:hover{color:var(--teal)}
+
+  .hero{padding:56px 0 8px}
+  .hero .eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .hero h1{font-size:clamp(32px,5vw,44px);margin-bottom:12px}
+  .hero .updated{color:var(--ink-soft);font-size:14.5px}
+
+  .lang-switch{display:flex;gap:8px;margin:28px 0 8px}
+  .lang-switch button{
+    font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;
+    padding:8px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);
+    transition:all .2s;
+  }
+  .lang-switch button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+  article{padding:12px 0 80px}
+  .alert{
+    background:#fbecea;border:1px solid #e8b4ac;border-left:4px solid var(--warn);
+    border-radius:14px;padding:20px 24px;margin-bottom:32px;
+  }
+  .alert strong{color:var(--warn)}
+  .intro{font-size:17px;color:var(--ink-soft);margin-bottom:32px}
+  section.block{margin-bottom:32px}
+  section.block h2{font-size:21px;color:var(--teal-deep);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  section.block p{margin-bottom:12px}
+  section.block ul{margin:0 0 12px 20px}
+  section.block li{margin-bottom:8px}
+  .contact-box{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:8px}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-soft);font-size:13.5px}
+
+  .lang{display:none}
+  .lang.show{display:block}
+
+  :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="11" fill="#0f6e6a"/>
+        <path d="M8 20c3.5-5.5 8-8.2 12-8.2S28.5 14.5 32 20c-3.5 5.5-8 8.2-12 8.2S11.5 25.5 8 20Z" stroke="#f6f4ef" stroke-width="2" fill="none"/>
+        <circle cx="20" cy="20" r="4.4" fill="#e8a13a"/>
+      </svg>
+      GazeSpeak
+    </div>
+    <a href="index.html" class="back">← Back to site</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Legal</div>
+    <h1>Disclaimer &amp; Terms of Use</h1>
+    <p class="updated" id="updated-line">Last updated: <span id="date"></span></p>
+    <div class="lang-switch">
+      <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+      <button id="btn-ko" onclick="setLang('ko')">한국어</button>
+    </div>
+  </div>
+
+  <article>
+    <!-- ENGLISH -->
+    <div class="lang show" id="lang-en">
+      <div class="alert">
+        <strong>Important — please read before using GazeSpeak.</strong>
+        <p style="margin:8px 0 0">GazeSpeak is a communication aid, not a medical device or a life-support system. Never rely on it alone in an emergency or for any life-critical communication. Always keep an alternative way to call for help — such as a call bell, an alarm, or a caregiver present.</p>
+      </div>
+
+      <p class="intro">GazeSpeak is a free, student-led research project that helps people with ALS build and speak sentences using eye movements. By downloading or using the app, you agree to the terms below.</p>
+
+      <section class="block">
+        <h2>1. Not a Medical Device</h2>
+        <p>GazeSpeak is an assistive communication tool. It is not a medical device and has not been reviewed or approved by any medical regulatory authority. It is not intended to diagnose, treat, cure, monitor, or prevent any disease or medical condition.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. Do Not Rely on It in Emergencies</h2>
+        <p>The app includes urgent phrases (for example, "Can't breathe" or "Suction"). These are provided for convenience only. Like all software and hardware, GazeSpeak can fail — due to camera or lighting conditions, low battery, a software error, a device problem, or other causes.</p>
+        <p><strong>You must never depend on GazeSpeak as the only way to communicate in an emergency or for life-critical needs.</strong> Always maintain a reliable backup method of calling for help and, where appropriate, ensure a caregiver is present.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. Accuracy and Limitations</h2>
+        <p>Eye-gaze detection depends on lighting, camera position, the user's posture and condition, and how ALS is affecting eye movement over time. Detection may be imperfect, and incorrect selections can occur. The app's speed and reliability vary between people and situations.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. Not Medical Advice</h2>
+        <p>Nothing in the app or on this website is medical advice, and using GazeSpeak does not replace consultation with qualified healthcare professionals. Any decisions about care, treatment, or communication needs should be made together with a medical provider.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. For Caregivers and Organizations</h2>
+        <p>Before relying on GazeSpeak with a person who has ALS, caregivers and clinicians should test it thoroughly and judge whether it is appropriate for that individual's specific situation, abilities, and environment.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. "As Is", No Warranty</h2>
+        <p>GazeSpeak is provided free of charge, "as is" and "as available", as a student research project. To the fullest extent permitted by law, we make no warranties of any kind and accept no liability for any loss, injury, or damage arising from the use of, or inability to use, the app. You use it at your own risk.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. Changes</h2>
+        <p>We may update these terms as the project develops. The date at the top of this page shows when it was last changed.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. Contact</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">Questions about this disclaimer? Contact us:</p>
+          <p style="margin-bottom:0"><strong>Email:</strong> <a href="mailto:blahblah@gmail.com">blahblah@gmail.com</a></p>
+        </div>
+      </section>
+    </div>
+
+    <!-- KOREAN -->
+    <div class="lang" id="lang-ko">
+      <div class="alert">
+        <strong>중요 — GazeSpeak 사용 전 반드시 읽어 주세요.</strong>
+        <p style="margin:8px 0 0">GazeSpeak는 의사소통 보조 도구이며, 의료기기나 생명유지 장치가 아닙니다. 응급 상황이나 생명과 관련된 소통에서 이 앱에만 의존하지 마세요. 호출벨, 알람, 보호자 상주 등 도움을 요청할 수 있는 대체 수단을 항상 함께 갖춰 주세요.</p>
+      </div>
+
+      <p class="intro">GazeSpeak는 ALS 환자가 눈의 움직임으로 문장을 만들고 말할 수 있도록 돕는 무료 학생 연구 프로젝트입니다. 앱을 다운로드하거나 사용하면 아래 약관에 동의하는 것으로 간주됩니다.</p>
+
+      <section class="block">
+        <h2>1. 의료기기가 아님</h2>
+        <p>GazeSpeak는 의사소통 보조 도구입니다. 의료기기가 아니며, 어떠한 의료 규제 당국의 심사나 승인도 받지 않았습니다. 질병이나 건강 상태를 진단·치료·완치·모니터링·예방하기 위한 것이 아닙니다.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. 응급 상황에서 의존 금지</h2>
+        <p>앱에는 긴급 표현(예: "숨을 못 쉬겠어요", "석션")이 포함되어 있습니다. 이는 편의를 위해 제공되는 것일 뿐입니다. 모든 소프트웨어·하드웨어와 마찬가지로 GazeSpeak도 카메라·조명 상태, 배터리 부족, 소프트웨어 오류, 기기 문제 등 다양한 이유로 작동하지 않을 수 있습니다.</p>
+        <p><strong>응급 상황이나 생명이 걸린 상황에서 GazeSpeak를 유일한 소통 수단으로 의존해서는 절대 안 됩니다.</strong> 항상 도움을 요청할 수 있는 신뢰성 있는 대체 수단을 유지하고, 필요한 경우 보호자가 함께 있도록 하십시오.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. 정확성과 한계</h2>
+        <p>시선 인식은 조명, 카메라 위치, 사용자의 자세와 상태, 그리고 시간에 따라 눈 움직임에 미치는 ALS의 영향에 따라 달라집니다. 인식이 완벽하지 않을 수 있으며, 잘못된 선택이 발생할 수 있습니다. 앱의 속도와 신뢰성은 사람과 상황에 따라 다릅니다.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. 의료 조언이 아님</h2>
+        <p>앱과 본 웹사이트의 어떤 내용도 의료 조언이 아니며, GazeSpeak 사용이 자격을 갖춘 의료 전문가와의 상담을 대체하지 않습니다. 돌봄·치료·의사소통에 관한 결정은 의료진과 함께 내려야 합니다.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. 보호자 및 기관 대상 안내</h2>
+        <p>ALS 환자에게 GazeSpeak를 적용하기 전에, 보호자와 임상의는 앱을 충분히 시험하고 해당 환자의 구체적인 상황·능력·환경에 적합한지 판단해야 합니다.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. "있는 그대로" 제공, 무보증</h2>
+        <p>GazeSpeak는 학생 연구 프로젝트로서 무료로, "있는 그대로(as is)" 그리고 "이용 가능한 상태로(as available)" 제공됩니다. 법이 허용하는 최대 범위에서, 저희는 어떠한 종류의 보증도 하지 않으며, 앱의 사용 또는 사용 불가로 인해 발생하는 손실·상해·손해에 대해 책임을 지지 않습니다. 사용에 따른 위험은 사용자 본인에게 있습니다.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. 변경</h2>
+        <p>프로젝트의 발전에 따라 본 약관이 업데이트될 수 있습니다. 이 페이지 상단의 날짜가 최종 변경 시점을 나타냅니다.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. 문의</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">본 면책 안내에 관해 문의사항이 있으시면 연락해 주십시오:</p>
+          <p style="margin-bottom:0"><strong>이메일:</strong> <a href="mailto:blahblah@gmail.com">blahblah@gmail.com</a></p>
+        </div>
+      </section>
+    </div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    GazeSpeak — Eye-gaze communication for people with ALS.
+  </div>
+</footer>
+
+<script>
+  var d = new Date();
+  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  document.getElementById("date").textContent = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+
+  function setLang(l){
+    var en = document.getElementById("lang-en");
+    var ko = document.getElementById("lang-ko");
+    var bEn = document.getElementById("btn-en");
+    var bKo = document.getElementById("btn-ko");
+    var updated = document.getElementById("updated-line");
+    if(l === "ko"){
+      en.classList.remove("show"); ko.classList.add("show");
+      bKo.classList.add("active"); bEn.classList.remove("active");
+      updated.childNodes[0].textContent = "최종 수정일: ";
+      document.documentElement.lang = "ko";
+    } else {
+      ko.classList.remove("show"); en.classList.add("show");
+      bEn.classList.add("active"); bKo.classList.remove("active");
+      updated.childNodes[0].textContent = "Last updated: ";
+      document.documentElement.lang = "en";
+    }
+  }
+</script>
+</body>
+</html>

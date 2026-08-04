@@ -75,14 +75,6 @@
   .cam{background:#0b0f14;color:#fff;text-align:center;border-radius:14px;padding:20px 10px;position:relative;overflow:hidden}
   .cam .t{font-weight:600;font-size:13px}
   .cam .s{font-size:10px;color:rgba(255,255,255,.55);margin-top:3px}
-  .gaze-dot{position:absolute;width:12px;height:12px;border-radius:50%;background:#e8a13a;box-shadow:0 0 0 5px rgba(232,161,58,.3);animation:gaze 7s ease-in-out infinite}
-  @keyframes gaze{
-    0%,100%{top:26%;left:24%}
-    20%{top:30%;left:70%}
-    45%{top:58%;left:60%}
-    70%{top:62%;left:30%}
-    88%{top:40%;left:48%}
-  }
   .ctrls{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:9px 0}
   .ctrl{text-align:center;padding:8px 0;border-radius:999px;font-weight:600;font-size:10px;background:#e2ddec;color:#8a86a0}
   .ctrl.on{background:#5b4b9e;color:#fff}
@@ -125,7 +117,7 @@
   #download{background:linear-gradient(160deg,#0f6e6a,#0a4d4a);color:#fff}
   #download .section-head h2{color:#fff}
   #download .section-head p{color:rgba(255,255,255,.8)}
-  .dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
   .dl-copy ul{list-style:none;margin-top:22px;display:grid;gap:14px}
   .dl-copy li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:rgba(255,255,255,.9)}
   .dl-copy li svg{flex:none;margin-top:3px;color:var(--amber)}
@@ -146,6 +138,9 @@
   .dl-links{display:grid;gap:12px;margin-top:20px}
   .dl-links a{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1.5px solid var(--line);border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;transition:border-color .2s,background .2s}
   .dl-links a:hover{border-color:var(--teal);background:var(--paper)}
+  .field label .opt{color:var(--ink-soft);font-weight:400;font-size:12px}
+  .reminder{margin-top:18px;font-size:12.5px;color:var(--ink-soft);background:var(--paper);border-radius:10px;padding:12px 14px;border:1px solid var(--line)}
+  .consent a{color:var(--teal);font-weight:600}
   @media(max-width:820px){.dl-grid{grid-template-columns:1fr;gap:36px}}
 
   /* FEEDBACK */
@@ -195,7 +190,7 @@
     <div>
       <span class="eyebrow">Eye-gaze communication</span>
       <h1>Speak again, <em>with your eyes</em>.</h1>
-      <p class="lead">GazeSpeak lets people living with ALS build sentences using only eye movements — no touch, no controllers, no expensive hardware.</p>
+      <p class="lead">GazeSpeak lets people living with ALS speak phrases using only eye movements — no touch, no controllers, no expensive hardware.</p>
       <div class="hero-actions">
         <a href="#download" class="btn btn-primary">
           Download the app
@@ -215,7 +210,6 @@
           <div class="cam">
             <div class="t">Front Camera Preview</div>
             <div class="s">Press Start to begin eye tracking</div>
-            <div class="gaze-dot"></div>
           </div>
           <div class="ctrls">
             <div class="ctrl on">Start</div>
@@ -247,7 +241,7 @@
     <div class="section-head">
       <span class="eyebrow">Powerful, simple</span>
       <h2>Communication that works the way you can move.</h2>
-      <p>GazeSpeak pairs camera-based eye tracking with a smart, frequency-ordered board so the words you use most are always the fastest to reach.</p>
+      <p>GazeSpeak pairs camera-based eye tracking with a board where the words you use most are always the fastest to reach.</p>
     </div>
     <div class="features">
       <div class="feature">
@@ -258,7 +252,7 @@
       <div class="feature">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
         <h3>Frequency-ordered board</h3>
-        <p>A Huffman-style layout keeps common words within the fewest glances, so everyday phrases come out faster.</p>
+        <p>The words and phrases you use most sit within the fewest glances, so everyday communication comes out faster.</p>
       </div>
       <div class="feature">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></div>
@@ -287,12 +281,12 @@
         <p>Rest your gaze on a zone of the board. GazeSpeak detects where you're looking and highlights it, then confirms with a short dwell.</p>
       </div>
       <div class="step">
-        <h3>Build the sentence</h3>
-        <p>Each selection narrows toward the word you want. The most-used words sit closest, so full phrases take only a few moves.</p>
+        <h3>Narrow to your phrase</h3>
+        <p>Each glance moves you closer to the phrase you need. The most-used phrases sit closest, so reaching one takes only a few moves.</p>
       </div>
       <div class="step">
         <h3>Speak it out</h3>
-        <p>Press play with a glance and the sentence is spoken aloud — letting you answer, ask, and connect in real time.</p>
+        <p>Once you land on the phrase, a glance plays it aloud — letting you answer, ask, and connect in real time.</p>
       </div>
     </div>
   </div>
@@ -304,38 +298,34 @@
     <div class="section-head">
       <span class="eyebrow" style="color:var(--amber)">Get the app</span>
       <h2>Download GazeSpeak</h2>
-      <p>Tell us a little about who's using it so we can support you and share updates. We only ask once, and your details stay private.</p>
+      <p>Free for individuals, families, and care organizations. The details below are optional — share only what you'd like.</p>
     </div>
     <div class="dl-grid">
       <div class="dl-copy">
-        <p style="font-size:16px;color:rgba(255,255,255,.9)">GazeSpeak is free for individuals, families, and care organizations. After a quick introduction, you'll get the download links and setup guide.</p>
+        <p style="font-size:16px;color:rgba(255,255,255,.9)">GazeSpeak runs on a standard Android tablet or phone. Confirm the notice below to get the download links and setup guide.</p>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Free forever for personal and clinical use</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Setup guide included for caregivers</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> We'll only email you about updates you asked for</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Personal details are optional — none are required</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> The camera is used only on your device — nothing is uploaded</li>
         </ul>
       </div>
 
       <div class="card">
         <div id="dl-form-view">
-          <h3>Request access</h3>
-          <p class="sub">Takes under a minute.</p>
+          <h3>Get the app</h3>
+          <p class="sub">All fields are optional. Just confirm the notice to continue.</p>
           <div class="field">
-            <label for="name">Full name <span class="req">*</span></label>
-            <input id="name" type="text" autocomplete="name" required>
+            <label for="email">Email <span class="opt">(optional — for updates)</span></label>
+            <input id="email" type="email" autocomplete="email">
           </div>
           <div class="field">
-            <label for="email">Email <span class="req">*</span></label>
-            <input id="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="org">Organization (optional)</label>
+            <label for="org">Organization <span class="opt">(optional)</span></label>
             <input id="org" type="text" autocomplete="organization">
           </div>
           <div class="field">
-            <label for="role">I'm downloading as <span class="req">*</span></label>
-            <select id="role" required>
-              <option value="">Select one…</option>
+            <label for="role">I'm downloading as <span class="opt">(optional)</span></label>
+            <select id="role">
+              <option value="">Prefer not to say</option>
               <option>Person living with ALS/MND</option>
               <option>Family member or caregiver</option>
               <option>Clinician or therapist</option>
@@ -345,10 +335,14 @@
             </select>
           </div>
           <label class="consent">
-            <input id="consent" type="checkbox" required>
-            <span>I agree to share this information so the GazeSpeak team can provide support and occasional updates. I can ask to be removed at any time.</span>
+            <input id="consent-privacy" type="checkbox">
+            <span>If I entered any details above, I agree the GazeSpeak team may use them to provide support and occasional updates. I can ask to be removed at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
           </label>
-          <button class="btn btn-primary" id="dl-submit">Get download links</button>
+          <label class="consent">
+            <input id="consent-disclaimer" type="checkbox" required>
+            <span><strong>Required:</strong> I understand GazeSpeak is a communication aid, not a medical device, and must not be relied on alone in emergencies or for life-critical communication. <a href="disclaimer.html" target="_blank" rel="noopener">Read the full disclaimer</a></span>
+          </label>
+          <button class="btn btn-primary" id="dl-submit">Continue to download</button>
         </div>
 
         <div class="dl-success" id="dl-success-view">
@@ -356,7 +350,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
           <h3>You're all set</h3>
-          <p class="sub">Thanks, <span id="dl-name">friend</span>. Choose your platform below.</p>
+          <p class="sub">Choose your platform below.</p>
           <div class="dl-links">
             <a href="#" id="dl-android">
               Android (APK)
@@ -371,6 +365,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
             </a>
           </div>
+          <p class="reminder">Reminder: keep a reliable backup way to call for help. GazeSpeak should not be your only means of communication in an emergency.</p>
         </div>
       </div>
     </div>
@@ -382,8 +377,8 @@
   <div class="wrap fb-inner">
     <span class="eyebrow">Your experience matters</span>
     <h2 style="font-size:clamp(28px,4vw,40px);margin-bottom:14px">Already tried GazeSpeak?</h2>
-    <p style="color:var(--ink-soft);font-size:17px">We're building this with the ALS community, not just for it. Two minutes of feedback helps us make the next version faster, clearer, and easier to use.</p>
-    <a href="#" class="btn btn-primary" id="fb-link">
+    <p style="color:var(--ink-soft);font-size:17px">We're building this with the ALS community, not just for it. If you'd like to share how it went — what worked, what didn't, what would help — we'd be grateful. It's completely optional.</p>
+    <a href="#" class="btn btn-primary" id="fb-link" target="_blank" rel="noopener">
       Share your feedback
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 9V5l7 7-7 7v-4H3V9z"/></svg>
     </a>
@@ -414,9 +409,9 @@
       </div>
       <div class="foot-col">
         <h4>Get in touch</h4>
-        <a href="mailto:hello@gazespeak.app">hello@gazespeak.app</a>
-        <a href="#download">Request access</a>
-        <a href="#">Privacy</a>
+        <a href="mailto:blahblah@gmail.com">blahblah@gmail.com</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -427,54 +422,79 @@
 </footer>
 
 <script>
-  // Download gate — client-side validation + reveal.
+  // Config.
   // FORM_ENDPOINT: your Google Apps Script web app URL (ends in /exec).
+  //   Stores only optional details a user chooses to enter (email/org/role). No name.
+  // FEEDBACK_FORM: your Google Form link for optional feedback.
   var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycby2dOfY0yGv1R4l9XsLyt6x3cwuEeD34tuysI4TmT1KKWsc5fbhzBwXmVeZmhQvtilp/exec";
   var LINKS = {
     android: "https://github.com/aly2027/eye-gaze-als/releases/download/v1.0/app-release.apk",
     ios:     "",   // TestFlight link — add when ready
     guide:   ""    // Setup guide PDF — add when ready
   };
-  var FEEDBACK_FORM = "#REPLACE_WITH_GOOGLE_FORM_LINK";
+  var FEEDBACK_FORM = "https://forms.gle/RQ2eA28rfcZmXmBb9";
 
-  document.getElementById("fb-link").setAttribute("href", FEEDBACK_FORM);
+  if(FEEDBACK_FORM && FEEDBACK_FORM.indexOf("http") === 0){
+    document.getElementById("fb-link").setAttribute("href", FEEDBACK_FORM);
+  }
 
-  // Cycle a highlight across the demo board rows, in sync with the gaze dot.
+  // Static highlight on one demo row (no motion).
   (function(){
-    var rows = ["r0","r1","r2","r3"].map(function(id){return document.getElementById(id);}).filter(Boolean);
-    if(!rows.length) return;
-    var i = 0;
-    setInterval(function(){
-      rows.forEach(function(r){r.classList.remove("hi");});
-      rows[i].classList.add("hi");
-      i = (i + 1) % rows.length;
-    }, 1750);
+    var r = document.getElementById("r1");
+    if(r){ r.classList.add("hi"); }
   })();
 
+  // Reveal helper: point a download link at its URL, or gray it out if not ready.
+  function wireLink(id, url, soonLabel){
+    var el = document.getElementById(id);
+    if(!el) return;
+    if(url){
+      el.setAttribute("href", url);
+      el.style.opacity = "";
+      el.style.pointerEvents = "";
+    } else {
+      el.removeAttribute("href");
+      el.style.opacity = ".5";
+      el.style.pointerEvents = "none";
+      var first = el.firstChild;
+      if(first && first.nodeType === 3){ first.textContent = soonLabel; }
+    }
+  }
+
+  // Download gate.
+  // Only the disclaimer confirmation is required. All personal fields are optional.
   document.getElementById("dl-submit").addEventListener("click", function(){
-    var name = document.getElementById("name");
     var email = document.getElementById("email");
+    var org = document.getElementById("org");
     var role = document.getElementById("role");
-    var consent = document.getElementById("consent");
+    var consentPrivacy = document.getElementById("consent-privacy");
+    var consentDisclaimer = document.getElementById("consent-disclaimer");
 
-    if(!name.value.trim()){ name.focus(); return; }
-    if(!email.value.trim() || email.value.indexOf("@") < 1){ email.focus(); return; }
-    if(!role.value){ role.focus(); return; }
-    if(!consent.checked){ consent.focus(); return; }
+    // The disclaimer must be acknowledged.
+    if(!consentDisclaimer.checked){
+      consentDisclaimer.focus();
+      consentDisclaimer.parentElement.style.color = "#c0392b";
+      return;
+    }
 
-    var payload = {
-      name: name.value.trim(),
-      email: email.value.trim(),
-      organization: document.getElementById("org").value.trim(),
-      role: role.value,
-      timestamp: new Date().toISOString()
-    };
+    // If an email was entered, it must look valid.
+    var emailVal = email.value.trim();
+    if(emailVal && emailVal.indexOf("@") < 1){
+      email.focus();
+      return;
+    }
 
-    // Send to your Google Apps Script endpoint if configured.
-    // Note: we send as text/plain and use no-cors so the browser does not
-    // require a CORS preflight (Apps Script doesn't answer preflights).
-    // The data still arrives; we just can't read the response back.
-    if(FORM_ENDPOINT && FORM_ENDPOINT.indexOf("http") === 0){
+    // Only send data if the user actually provided some AND agreed to the privacy note.
+    // If nothing was entered, we store nothing at all.
+    var hasDetails = emailVal || org.value.trim() || role.value;
+    if(hasDetails && consentPrivacy.checked && FORM_ENDPOINT && FORM_ENDPOINT.indexOf("http") === 0){
+      var payload = {
+        email: emailVal,
+        organization: org.value.trim(),
+        role: role.value,
+        timestamp: new Date().toISOString()
+      };
+      // text/plain + no-cors avoids a CORS preflight (Apps Script doesn't answer preflights).
       fetch(FORM_ENDPOINT, {
         method:"POST",
         mode:"no-cors",
@@ -483,26 +503,10 @@
       }).catch(function(){/* ignore — still let the user download */});
     }
 
-    // Wire up the real links and reveal the success view.
-    // Links that aren't ready yet are shown as "coming soon" (disabled).
-    function wireLink(id, url, soonLabel){
-      var el = document.getElementById(id);
-      if(url){
-        el.setAttribute("href", url);
-        el.style.opacity = "";
-        el.style.pointerEvents = "";
-      } else {
-        el.removeAttribute("href");
-        el.style.opacity = ".5";
-        el.style.pointerEvents = "none";
-        var first = el.firstChild;
-        if(first && first.nodeType === 3){ first.textContent = soonLabel; }
-      }
-    }
+    // Reveal the download links.
     wireLink("dl-android", LINKS.android, "");
     wireLink("dl-ios", LINKS.ios, "iOS — coming soon");
     wireLink("dl-guide", LINKS.guide, "Setup guide — coming soon");
-    document.getElementById("dl-name").textContent = payload.name.split(" ")[0] || "friend";
 
     document.getElementById("dl-form-view").style.display = "none";
     document.getElementById("dl-success-view").classList.add("show");
