@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GazeSpeak — Communicate with Your Eyes</title>
+<script src="i18n.js"></script>
 <meta name="description" content="GazeSpeak helps people living with ALS and other motor neuron diseases communicate again using eye-gaze tracking. Free, accessible AAC technology built to restore independence and voice.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +139,18 @@
   .dl-links{display:grid;gap:12px;margin-top:20px}
   .dl-links a{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1.5px solid var(--line);border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;transition:border-color .2s,background .2s}
   .dl-links a:hover{border-color:var(--teal);background:var(--paper)}
+  .pledge{background:rgba(232,161,58,.12);border:1px solid rgba(232,161,58,.5);border-radius:12px;padding:14px 16px;margin:4px 0 18px}
+  .pledge h4{font-family:"Fraunces",serif;font-size:15.5px;font-weight:600;margin-bottom:5px}
+  .pledge p{font-size:13px;color:var(--ink-soft);line-height:1.5}
+  .pledge .consent{margin:10px 0 0;color:var(--ink);font-weight:500}
+  .pledge .where{margin-top:9px;font-size:12.5px;color:var(--ink);background:rgba(255,255,255,.65);border-radius:8px;padding:9px 11px}
+  .pledge .where strong{font-weight:600}
+  .dl-hint{font-size:12.5px;color:var(--ink-soft);line-height:1.5;text-align:left;margin:-4px 0 -2px}
+  .lang-toggle{display:flex;gap:8px;margin-top:6px}
+  .lang-toggle button{flex:1;padding:9px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper-2);font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink-soft);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+  .lang-toggle button:hover{border-color:var(--teal);color:var(--teal)}
+  .lang-toggle button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+  .dl-sep{font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;text-align:left}
   .field label .opt{color:var(--ink-soft);font-weight:400;font-size:12px}
   .reminder{margin-top:18px;font-size:12.5px;color:var(--ink-soft);background:var(--paper);border-radius:10px;padding:12px 14px;border:1px solid var(--line)}
   .consent a{color:var(--teal);font-weight:600}
@@ -158,10 +171,25 @@
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
   @media(max-width:680px){.foot-grid{grid-template-columns:1fr;gap:28px}}
 
+  /* Hide the page for a moment when a translation is pending, so Korean
+     visitors never see English text flash first. i18n.js always reveals it. */
+  html[data-lang="ko"] body{opacity:0}
+  html.i18n-ready body{opacity:1;transition:opacity .12s ease}
+  /* Site language switch in the nav */
+  .lang-nav{display:flex;gap:6px;margin-left:18px}
+  .lang-nav button{
+    font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
+    padding:6px 13px;border-radius:999px;border:1.5px solid var(--line);
+    background:transparent;color:var(--ink-soft);transition:background .2s,border-color .2s,color .2s;
+  }
+  .lang-nav button:hover{border-color:var(--teal);color:var(--teal)}
+  .lang-nav button.active{background:var(--teal);border-color:var(--teal);color:#fff}
+  @media(max-width:520px){.lang-nav{margin-left:10px}.lang-nav button{padding:6px 10px;font-size:12px}}
+
   :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
 </style>
 </head>
-<body>
+<body data-title-key="page.title.index">
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -174,13 +202,19 @@
       GazeSpeak
     </div>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="#download">Download</a>
-      <a href="#feedback">Feedback</a>
-      <a href="#contact">Contact</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#download" data-i18n="nav.download">Download</a>
+      <a href="#feedback" data-i18n="nav.feedback">Feedback</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
-    <a href="#download" class="nav-cta">Get the app</a>
+    <div style="display:flex;align-items:center">
+      <a href="#download" class="nav-cta" data-i18n="nav.cta">Get the app</a>
+      <div class="lang-nav" role="group" aria-label="Site language">
+        <button type="button" data-lang-btn="en" onclick="GSI18N.set('en')">EN</button>
+        <button type="button" data-lang-btn="ko" onclick="GSI18N.set('ko')">한국어</button>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -188,19 +222,19 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Eye-gaze communication</span>
-      <h1>Speak again, <em>with your eyes</em>.</h1>
-      <p class="lead">GazeSpeak lets people living with ALS speak phrases using only eye movements — no touch, no controllers, no expensive hardware.</p>
+      <span class="eyebrow" data-i18n="hero.eyebrow">Eye-gaze communication</span>
+      <h1 data-i18n="hero.h1">Speak again, <em>with your eyes</em>.</h1>
+      <p class="lead" data-i18n="hero.lead">GazeSpeak lets people living with ALS speak phrases using only eye movements — no touch, no controllers, no expensive hardware.</p>
       <div class="hero-actions">
         <a href="#download" class="btn btn-primary">
-          Download the app
+          <span data-i18n="hero.btn.download">Download the app</span>
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v13m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
         </a>
-        <a href="#how" class="btn btn-ghost">See how it works</a>
+        <a href="#how" class="btn btn-ghost" data-i18n="hero.btn.how">See how it works</a>
       </div>
       <div class="hero-note">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>
-        Free · Works on a standard tablet camera · No account required
+        <span data-i18n="hero.note">Free · Works on a standard tablet camera · No account required</span>
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
@@ -208,26 +242,26 @@
         <div class="phone-notch"></div>
         <div class="app">
           <div class="cam">
-            <div class="t">Front Camera Preview</div>
-            <div class="s">Press Start to begin eye tracking</div>
+            <div class="t" data-i18n="mock.cam.t">Front Camera Preview</div>
+            <div class="s" data-i18n="mock.cam.s">Press Start to begin eye tracking</div>
           </div>
           <div class="ctrls">
-            <div class="ctrl on">Start</div>
-            <div class="ctrl">Pause</div>
-            <div class="ctrl">Stop</div>
+            <div class="ctrl on" data-i18n="mock.start">Start</div>
+            <div class="ctrl" data-i18n="mock.pause">Pause</div>
+            <div class="ctrl" data-i18n="mock.stop">Stop</div>
           </div>
           <div class="board2">
-            <div class="b-head">Main</div>
-            <div class="row grp-r" id="r0"><span class="code">0</span> Can't breathe</div>
-            <div class="row grp-r"><span class="code">1</span> Suction</div>
-            <div class="row grp-g"><span class="code">00</span> Yes</div>
-            <div class="row grp-g" id="r1"><span class="code">01</span> No</div>
-            <div class="row grp-g"><span class="code">10</span> Repeat</div>
-            <div class="row grp-g"><span class="code">11</span> Wait</div>
-            <div class="row grp-y"><span class="code">000</span> Chest pain</div>
-            <div class="row grp-y" id="r2"><span class="code">011</span> Thank you</div>
-            <div class="row grp-b"><span class="code">100</span> → PAIN</div>
-            <div class="row grp-b" id="r3"><span class="code">111</span> → FEELING</div>
+            <div class="b-head" data-i18n="mock.main">Main</div>
+            <div class="row grp-r" id="r0"><span class="code">0</span> <span data-i18n="mock.w0">Can't breathe</span></div>
+            <div class="row grp-r"><span class="code">1</span> <span data-i18n="mock.w1">Suction</span></div>
+            <div class="row grp-g"><span class="code">00</span> <span data-i18n="mock.w00">Yes</span></div>
+            <div class="row grp-g" id="r1"><span class="code">01</span> <span data-i18n="mock.w01">No</span></div>
+            <div class="row grp-g"><span class="code">10</span> <span data-i18n="mock.w10">Repeat</span></div>
+            <div class="row grp-g"><span class="code">11</span> <span data-i18n="mock.w11">Wait</span></div>
+            <div class="row grp-y"><span class="code">000</span> <span data-i18n="mock.w000">Chest pain</span></div>
+            <div class="row grp-y" id="r2"><span class="code">011</span> <span data-i18n="mock.w011">Thank you</span></div>
+            <div class="row grp-b"><span class="code">100</span> <span data-i18n="mock.w100">→ PAIN</span></div>
+            <div class="row grp-b" id="r3"><span class="code">111</span> <span data-i18n="mock.w111">→ FEELING</span></div>
           </div>
         </div>
       </div>
@@ -239,30 +273,30 @@
 <section id="features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Powerful, simple</span>
-      <h2>Communication that works the way you can move.</h2>
-      <p>GazeSpeak pairs camera-based eye tracking with a board where the words you use most are always the fastest to reach.</p>
+      <span class="eyebrow" data-i18n="feat.eyebrow">Powerful, simple</span>
+      <h2 data-i18n="feat.h2">Communication that works the way you can move.</h2>
+      <p data-i18n="feat.p">GazeSpeak pairs camera-based eye tracking with a board where the words you use most are always the fastest to reach.</p>
     </div>
     <div class="features">
       <div class="feature">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>Camera-based eye tracking</h3>
-        <p>Uses the front camera of a standard phone or tablet. No headset, no infrared rig, no calibration lab required.</p>
+        <h3 data-i18n="feat.1.h">Camera-based eye tracking</h3>
+        <p data-i18n="feat.1.p">Uses the front camera of a standard phone or tablet. No headset, no infrared rig, no calibration lab required.</p>
       </div>
       <div class="feature">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
-        <h3>Frequency-ordered board</h3>
-        <p>The words and phrases you use most sit within the fewest glances, so everyday communication comes out faster.</p>
+        <h3 data-i18n="feat.2.h">Frequency-ordered board</h3>
+        <p data-i18n="feat.2.p">The words and phrases you use most sit within the fewest glances, so everyday communication comes out faster.</p>
       </div>
       <div class="feature">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></div>
-        <h3>Speaks out loud</h3>
-        <p>Finished sentences are read aloud with built-in text-to-speech, in English or Korean, so caregivers hear them instantly.</p>
+        <h3 data-i18n="feat.3.h">Speaks out loud</h3>
+        <p data-i18n="feat.3.p">Finished sentences are read aloud with built-in text-to-speech, in English or Korean, so caregivers hear them instantly.</p>
       </div>
       <div class="feature">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4m10-10h-4M6 12H2m15.07-5.07-2.83 2.83M8.34 15.66l-2.83 2.83m0-12.02 2.83 2.83m6.9 6.9 2.83 2.83"/></svg></div>
-        <h3>Made for real use</h3>
-        <p>Large targets, high-contrast text, and quick caregiver phrases designed with accessibility first — not as an afterthought.</p>
+        <h3 data-i18n="feat.4.h">Made for real use</h3>
+        <p data-i18n="feat.4.p">Large targets, high-contrast text, and quick caregiver phrases designed with accessibility first — not as an afterthought.</p>
       </div>
     </div>
   </div>
@@ -272,21 +306,21 @@
 <section id="how">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Three glances from thought to voice.</h2>
+      <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+      <h2 data-i18n="how.h2">Three glances from thought to voice.</h2>
     </div>
     <div class="steps">
       <div class="step">
-        <h3>Look to select</h3>
-        <p>Rest your gaze on a zone of the board. GazeSpeak detects where you're looking and highlights it, then confirms with a short dwell.</p>
+        <h3 data-i18n="how.1.h">Look to select</h3>
+        <p data-i18n="how.1.p">Rest your gaze on a zone of the board. GazeSpeak detects where you're looking and highlights it, then confirms with a short dwell.</p>
       </div>
       <div class="step">
-        <h3>Narrow to your phrase</h3>
-        <p>Each glance moves you closer to the phrase you need. The most-used phrases sit closest, so reaching one takes only a few moves.</p>
+        <h3 data-i18n="how.2.h">Narrow to your phrase</h3>
+        <p data-i18n="how.2.p">Each glance moves you closer to the phrase you need. The most-used phrases sit closest, so reaching one takes only a few moves.</p>
       </div>
       <div class="step">
-        <h3>Speak it out</h3>
-        <p>Once you land on the phrase, a glance plays it aloud — letting you answer, ask, and connect in real time.</p>
+        <h3 data-i18n="how.3.h">Speak it out</h3>
+        <p data-i18n="how.3.p">Once you land on the phrase, a glance plays it aloud — letting you answer, ask, and connect in real time.</p>
       </div>
     </div>
   </div>
@@ -296,76 +330,93 @@
 <section id="download">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" style="color:var(--amber)">Get the app</span>
-      <h2>Download GazeSpeak</h2>
-      <p>Free for individuals, families, and care organizations. The details below are optional — share only what you'd like.</p>
+      <span class="eyebrow" style="color:var(--amber)" data-i18n="dl.eyebrow">Get the app</span>
+      <h2 data-i18n="dl.h2">Download GazeSpeak</h2>
+      <p data-i18n="dl.sub">Free for individuals, families, and care organizations. The details below are optional — share only what you'd like.</p>
     </div>
     <div class="dl-grid">
       <div class="dl-copy">
-        <p style="font-size:16px;color:rgba(255,255,255,.9)">GazeSpeak runs on a standard Android tablet or phone. Confirm the notice below to get the download links and setup guide.</p>
+        <p style="font-size:16px;color:rgba(255,255,255,.9)" data-i18n="dl.copy">GazeSpeak runs on a standard Android tablet or phone. Confirm the notice below to get the download links, a quick-start guide, and the full manual.</p>
         <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Free forever for personal and clinical use</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Personal details are optional — none are required</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> The camera is used only on your device — nothing is uploaded</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="dl.li1">Free forever for personal and clinical use</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="dl.li2">Includes a quick-start guide and a full manual (English · 한국어)</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="dl.li3">Personal details are optional — none are required</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="dl.li4">The camera is used only on your device — nothing is uploaded</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="dl.li5">All we ask in return: tell us how it went once you've tried it</span></li>
         </ul>
       </div>
 
       <div class="card">
         <div id="dl-form-view">
-          <h3>Get the app</h3>
-          <p class="sub">All fields are optional. Just confirm the notice to continue.</p>
+          <h3 data-i18n="form.h3">Get the app</h3>
+          <p class="sub" data-i18n="form.sub">All fields are optional. Just confirm the notice to continue.</p>
           <div class="field">
-            <label for="email">Email <span class="opt">(optional — for updates)</span></label>
+            <label for="email" data-i18n="form.email">Email <span class="opt">(optional — for updates)</span></label>
             <input id="email" type="email" autocomplete="email">
           </div>
           <div class="field">
-            <label for="org">Organization <span class="opt">(optional)</span></label>
-            <input id="org" type="text" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="role">I'm downloading as <span class="opt">(optional)</span></label>
+            <label for="role" data-i18n="form.role">I'm downloading as <span class="opt">(optional)</span></label>
             <select id="role">
-              <option value="">Prefer not to say</option>
-              <option>Person living with ALS/MND</option>
-              <option>Family member or caregiver</option>
-              <option>Clinician or therapist</option>
-              <option>ALS organization / nonprofit</option>
-              <option>Researcher</option>
-              <option>Other</option>
+              <option value="" data-i18n="role.none">Prefer not to say</option>
+              <option data-i18n="role.patient">Person living with ALS/MND</option>
+              <option data-i18n="role.family">Family member or caregiver</option>
+              <option data-i18n="role.clinician">Clinician or therapist</option>
+              <option data-i18n="role.org">ALS organization / nonprofit</option>
+              <option data-i18n="role.researcher">Researcher</option>
+              <option data-i18n="role.other">Other</option>
             </select>
           </div>
           <label class="consent">
             <input id="consent-privacy" type="checkbox">
-            <span>If I entered any details above, I agree the GazeSpeak team may use them to provide support and occasional updates. I can ask to be removed at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
+            <span data-i18n="consent.privacy">If I entered any details above, I agree the GazeSpeak team may use them to provide support and occasional updates. I can ask to be removed at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
           </label>
           <label class="consent">
             <input id="consent-disclaimer" type="checkbox" required>
-            <span><strong>Required:</strong> I understand GazeSpeak is a communication aid, not a medical device, and must not be relied on alone in emergencies or for life-critical communication. <a href="disclaimer.html" target="_blank" rel="noopener">Read the full disclaimer</a></span>
+            <span data-i18n="consent.disclaimer"><strong>Required:</strong> I understand GazeSpeak is a communication aid, not a medical device, and must not be relied on alone in emergencies or for life-critical communication. <a href="disclaimer.html" target="_blank" rel="noopener">Read the full disclaimer</a></span>
           </label>
-          <button class="btn btn-primary" id="dl-submit">Continue to download</button>
+          <div class="pledge">
+            <h4 data-i18n="pledge.h4">One small favour</h4>
+            <p data-i18n="pledge.p">GazeSpeak is a research project, and it improves only when people tell us how it went. Please use it for a week or two with the person you're supporting, then come back to this site and leave your notes. What didn't work matters most.</p>
+            <p class="where" data-i18n="pledge.where">The feedback form lives at the <strong>bottom of this page</strong>, under <strong>"Already tried GazeSpeak?"</strong> — or use the <strong>Feedback</strong> link in the top menu whenever you return.</p>
+            <label class="consent">
+              <input id="pledge-feedback" type="checkbox">
+              <span data-i18n="pledge.consent">Yes — I'll come back and share how it went.</span>
+            </label>
+          </div>
+          <button class="btn btn-primary" id="dl-submit" data-i18n="form.submit">Continue to download</button>
         </div>
 
         <div class="dl-success" id="dl-success-view">
           <div class="checkmark">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
-          <h3>You're all set</h3>
-          <p class="sub">Choose your platform below.</p>
+          <h3 data-i18n="success.h3">You're all set</h3>
+          <p class="sub" data-i18n="success.sub">Choose your platform below, then pick the manual in your language.</p>
           <div class="dl-links">
             <a href="#" id="dl-android">
-              Android (APK)
+              <span data-i18n="dl.android">Android (APK)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
             </a>
             <a href="#" id="dl-ios">
-              iOS (TestFlight)
+              <span data-i18n="dl.ios">iOS (TestFlight)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
             </a>
-            <a href="#" id="dl-guide">
-              Setup guide (PDF)
+            <div class="dl-sep" data-i18n="dl.sep">User manual · 사용 설명서</div>
+            <p class="dl-hint" id="dl-guide-hint">Start with the quick guide; the full manual covers setup and troubleshooting in detail.</p>
+            <div class="lang-toggle" role="group" aria-label="Manual language">
+              <button type="button" id="lang-en" aria-pressed="true">English</button>
+              <button type="button" id="lang-ko" aria-pressed="false">한국어</button>
+            </div>
+            <a href="#" id="dl-guide-quick">
+              <span id="dl-guide-quick-label">Quick start (PDF)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            </a>
+            <a href="#" id="dl-guide-full">
+              <span id="dl-guide-full-label">Full user manual (PDF)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
             </a>
           </div>
-          <p class="reminder">Reminder: keep a reliable backup way to call for help. GazeSpeak should not be your only means of communication in an emergency.</p>
+          <p class="reminder" data-i18n="dl.reminder">Reminder: keep a reliable backup way to call for help. GazeSpeak should not be your only means of communication in an emergency.</p>
         </div>
       </div>
     </div>
@@ -375,11 +426,11 @@
 <!-- FEEDBACK -->
 <section id="feedback">
   <div class="wrap fb-inner">
-    <span class="eyebrow">Your experience matters</span>
-    <h2 style="font-size:clamp(28px,4vw,40px);margin-bottom:14px">Already tried GazeSpeak?</h2>
-    <p style="color:var(--ink-soft);font-size:17px">We're building this with the ALS community, not just for it. If you'd like to share how it went — what worked, what didn't, what would help — we'd be grateful. It's completely optional.</p>
+    <span class="eyebrow" data-i18n="fb.eyebrow">Your experience matters</span>
+    <h2 style="font-size:clamp(28px,4vw,40px);margin-bottom:14px" data-i18n="fb.h2">Already tried GazeSpeak?</h2>
+    <p style="color:var(--ink-soft);font-size:17px" data-i18n="fb.p">We're building this with the ALS community, not just for it. If you'd like to share how it went — what worked, what didn't, what would help — we'd be grateful. It's completely optional.</p>
     <a href="#" class="btn btn-primary" id="fb-link" target="_blank" rel="noopener">
-      Share your feedback
+      <span data-i18n="fb.btn">Share your feedback</span>
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 9V5l7 7-7 7v-4H3V9z"/></svg>
     </a>
   </div>
@@ -398,25 +449,25 @@
           </svg>
           GazeSpeak
         </div>
-        <p>Restoring voice and independence for people living with ALS through accessible eye-gaze communication. A student-led research project.</p>
+        <p data-i18n="foot.tagline">Restoring voice and independence for people living with ALS through accessible eye-gaze communication. A student-led research project.</p>
       </div>
       <div class="foot-col">
-        <h4>Product</h4>
-        <a href="#features">Features</a>
-        <a href="#how">How it works</a>
-        <a href="#download">Download</a>
-        <a href="#feedback">Feedback</a>
+        <h4 data-i18n="foot.product">Product</h4>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#download" data-i18n="nav.download">Download</a>
+        <a href="#feedback" data-i18n="nav.feedback">Feedback</a>
       </div>
       <div class="foot-col">
-        <h4>Get in touch</h4>
+        <h4 data-i18n="foot.contact">Get in touch</h4>
         <a href="mailto:blahblah@gmail.com">blahblah@gmail.com</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
+        <a href="disclaimer.html" data-i18n="foot.disclaimer">Disclaimer</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 GazeSpeak. Built for those finding their voice.</span>
-      <span>Made with care by the GazeSpeak research team.</span>
+      <span data-i18n="foot.copyright">© 2026 GazeSpeak. Built for those finding their voice.</span>
+      <span data-i18n="foot.made">Made with care by the GazeSpeak research team.</span>
     </div>
   </div>
 </footer>
@@ -424,13 +475,18 @@
 <script>
   // Config.
   // FORM_ENDPOINT: your Google Apps Script web app URL (ends in /exec).
-  //   Stores only optional details a user chooses to enter (email/org/role). No name.
+  //   Stores only optional details a user chooses to enter (email/role). No name, no organization.
   // FEEDBACK_FORM: your Google Form link for optional feedback.
   var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycby2dOfY0yGv1R4l9XsLyt6x3cwuEeD34tuysI4TmT1KKWsc5fbhzBwXmVeZmhQvtilp/exec";
   var LINKS = {
     android: "https://github.com/aly2027/eye-gaze-als/releases/download/v1.0/app-release.apk",
     ios:     "",   // TestFlight link — add when ready
-    guide:   ""    // Setup guide PDF — add when ready
+    // Short version (quick start)
+    quickEn: "ALS_EyeGaze_QuickStart_EN.pdf",
+    quickKr: "ALS_EyeGaze_QuickStart_KR.pdf",
+    // Full version
+    fullEn:  "ALS_EyeGaze_UserManual_EN.pdf",
+    fullKr:  "ALS_EyeGaze_UserManual_KR.pdf"
   };
   var FEEDBACK_FORM = "https://forms.gle/RQ2eA28rfcZmXmBb9";
 
@@ -461,11 +517,78 @@
     }
   }
 
+  // Manual picker: language toggle switches both the short and the full version.
+  // Defaults to the browser's language, then the reader can change it.
+  // Note: the key "ko" is the browser language code (navigator.language);
+  // the PDF files themselves all use the _KR suffix.
+  var GUIDES = {
+    en: {
+      hint: "Start with the quick guide; the full manual covers setup and troubleshooting in detail.",
+      quick: { url: LINKS.quickEn, file: "ALS_EyeGaze_QuickStart_EN.pdf",
+               ready: "Quick start — English (PDF)", soon: "Quick start — coming soon" },
+      full:  { url: LINKS.fullEn,  file: "ALS_EyeGaze_UserManual_EN.pdf",
+               ready: "Full user manual — English (PDF)", soon: "Full manual — coming soon" }
+    },
+    ko: {
+      hint: "먼저 빠른 시작 안내를 보시고, 자세한 설정과 문제 해결은 전체 설명서를 참고하세요.",
+      quick: { url: LINKS.quickKr, file: "ALS_EyeGaze_QuickStart_KR.pdf",
+               ready: "빠른 시작 안내 — 한국어 (PDF)", soon: "빠른 시작 안내 — 준비 중" },
+      full:  { url: LINKS.fullKr,  file: "ALS_EyeGaze_UserManual_KR.pdf",
+               ready: "전체 사용 설명서 — 한국어 (PDF)", soon: "전체 사용 설명서 — 준비 중" }
+    }
+  };
+
+  function applyGuide(id, spec){
+    var el = document.getElementById(id);
+    var label = document.getElementById(id + "-label");
+    if(!el || !label) return;
+    if(spec.url){
+      el.setAttribute("href", spec.url);
+      el.setAttribute("download", spec.file);
+      el.style.opacity = "";
+      el.style.pointerEvents = "";
+      label.textContent = spec.ready;
+    } else {
+      el.removeAttribute("href");
+      el.removeAttribute("download");
+      el.style.opacity = ".5";
+      el.style.pointerEvents = "none";
+      label.textContent = spec.soon;
+    }
+  }
+
+  function setGuideLang(lang){
+    var g = GUIDES[lang] || GUIDES.en;
+
+    ["en","ko"].forEach(function(code){
+      var btn = document.getElementById("lang-" + code);
+      if(!btn) return;
+      var on = (code === lang);
+      btn.classList.toggle("on", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+
+    var hint = document.getElementById("dl-guide-hint");
+    if(hint){ hint.textContent = g.hint; }
+
+    applyGuide("dl-guide-quick", g.quick);
+    applyGuide("dl-guide-full", g.full);
+  }
+
+  ["en","ko"].forEach(function(code){
+    var btn = document.getElementById("lang-" + code);
+    if(btn){ btn.addEventListener("click", function(){ setGuideLang(code); }); }
+  });
+
+  // The manual follows the site language, but the reader can still pick the other one.
+  if(window.GSI18N){
+    GSI18N.onChange(function(lang){ setGuideLang(lang); });
+  }
+
   // Download gate.
   // Only the disclaimer confirmation is required. All personal fields are optional.
   document.getElementById("dl-submit").addEventListener("click", function(){
     var email = document.getElementById("email");
-    var org = document.getElementById("org");
     var role = document.getElementById("role");
     var consentPrivacy = document.getElementById("consent-privacy");
     var consentDisclaimer = document.getElementById("consent-disclaimer");
@@ -486,12 +609,12 @@
 
     // Only send data if the user actually provided some AND agreed to the privacy note.
     // If nothing was entered, we store nothing at all.
-    var hasDetails = emailVal || org.value.trim() || role.value;
+    var hasDetails = emailVal || role.value;
     if(hasDetails && consentPrivacy.checked && FORM_ENDPOINT && FORM_ENDPOINT.indexOf("http") === 0){
       var payload = {
         email: emailVal,
-        organization: org.value.trim(),
         role: role.value,
+        feedbackPledge: document.getElementById("pledge-feedback").checked ? "yes" : "",
         timestamp: new Date().toISOString()
       };
       // text/plain + no-cors avoids a CORS preflight (Apps Script doesn't answer preflights).
@@ -506,7 +629,7 @@
     // Reveal the download links.
     wireLink("dl-android", LINKS.android, "");
     wireLink("dl-ios", LINKS.ios, "iOS — coming soon");
-    wireLink("dl-guide", LINKS.guide, "Setup guide — coming soon");
+    setGuideLang(window.GSI18N ? GSI18N.get() : "en");
 
     document.getElementById("dl-form-view").style.display = "none";
     document.getElementById("dl-success-view").classList.add("show");

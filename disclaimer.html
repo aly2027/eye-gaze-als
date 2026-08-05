@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Disclaimer — GazeSpeak</title>
 <meta name="description" content="Important disclaimer and terms of use for the GazeSpeak eye-gaze communication app for people with ALS.">
+<script src="i18n.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -70,11 +71,16 @@
 
   .lang{display:none}
   .lang.show{display:block}
+  /* Shown before JS runs, so the right language is painted immediately. */
+  html[data-lang="en"] #lang-en,
+  html[data-lang="ko"] #lang-ko{display:block}
+  html[data-lang="en"] #lang-ko,
+  html[data-lang="ko"] #lang-en{display:none}
 
   :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
 </style>
 </head>
-<body>
+<body data-title-key="page.title.disclaimer">
 
 <header class="top">
   <div class="wrap top-inner">
@@ -86,18 +92,18 @@
       </svg>
       GazeSpeak
     </div>
-    <a href="index.html" class="back">← Back to site</a>
+    <a href="index.html" class="back" data-i18n="legal.back">← Back to site</a>
   </div>
 </header>
 
 <div class="wrap">
   <div class="hero">
-    <div class="eyebrow">Legal</div>
-    <h1>Disclaimer &amp; Terms of Use</h1>
-    <p class="updated" id="updated-line">Last updated: <span id="date"></span></p>
+    <div class="eyebrow" data-i18n="legal.eyebrow">Legal</div>
+    <h1 data-i18n="legal.disclaimer.h1">Disclaimer &amp; Terms of Use</h1>
+    <p class="updated" id="updated-line"><span data-i18n="legal.updated">Last updated: </span><span id="date"></span></p>
     <div class="lang-switch">
-      <button id="btn-en" class="active" onclick="setLang('en')">English</button>
-      <button id="btn-ko" onclick="setLang('ko')">한국어</button>
+      <button id="btn-en" data-lang-btn="en" onclick="GSI18N.set('en')">English</button>
+      <button id="btn-ko" data-lang-btn="ko" onclick="GSI18N.set('ko')">한국어</button>
     </div>
   </div>
 
@@ -214,32 +220,30 @@
 
 <footer>
   <div class="wrap">
-    GazeSpeak — Eye-gaze communication for people with ALS.
+    <span data-i18n="legal.footer">GazeSpeak — Eye-gaze communication for people with ALS.</span>
   </div>
 </footer>
 
 <script>
-  var d = new Date();
-  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  document.getElementById("date").textContent = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
-
-  function setLang(l){
-    var en = document.getElementById("lang-en");
-    var ko = document.getElementById("lang-ko");
-    var bEn = document.getElementById("btn-en");
-    var bKo = document.getElementById("btn-ko");
-    var updated = document.getElementById("updated-line");
-    if(l === "ko"){
-      en.classList.remove("show"); ko.classList.add("show");
-      bKo.classList.add("active"); bEn.classList.remove("active");
-      updated.childNodes[0].textContent = "최종 수정일: ";
-      document.documentElement.lang = "ko";
+  // "Last updated" date, written the way each language writes dates.
+  function stampDate(lang){
+    var d = new Date();
+    var el = document.getElementById("date");
+    if(!el) return;
+    if(lang === "ko"){
+      el.textContent = d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일";
     } else {
-      ko.classList.remove("show"); en.classList.add("show");
-      bEn.classList.add("active"); bKo.classList.remove("active");
-      updated.childNodes[0].textContent = "Last updated: ";
-      document.documentElement.lang = "en";
+      var months = ["January","February","March","April","May","June",
+                    "July","August","September","October","November","December"];
+      el.textContent = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
     }
+  }
+
+  if(window.GSI18N){
+    stampDate(GSI18N.get());
+    GSI18N.onChange(stampDate);
+  } else {
+    stampDate("en");
   }
 </script>
 </body>
