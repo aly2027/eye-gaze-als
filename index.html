@@ -455,7 +455,7 @@
       </div>
       <div class="foot-col">
         <h4 data-i18n="foot.contact">Get in touch</h4>
-        <a href="mailto:blahblah@gmail.com">blahblah@gmail.com</a>
+        <a href="mailto:contact.eyeum@gmail.com">contact.eyeum@gmail.com</a>
         <a href="privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
         <a href="disclaimer.html" data-i18n="foot.disclaimer">Disclaimer</a>
       </div>
@@ -468,11 +468,15 @@
 </footer>
 
 <script>
-  // Config.
-  // FORM_ENDPOINT: your Google Apps Script web app URL (ends in /exec).
-  //   Stores only optional details a user chooses to enter (email/role). No name, no organization.
-  // FEEDBACK_FORM: your Google Form link for optional feedback.
-  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycby2dOfY0yGv1R4l9XsLyt6x3cwuEeD34tuysI4TmT1KKWsc5fbhzBwXmVeZmhQvtilp/exec";
+  // Config — both of these must live in the contact.eyeum@gmail.com Google account.
+  //
+  // FORM_ENDPOINT: the Apps Script web app URL (ends in /exec) that appends
+  //   download sign-ups to the EYEUM Downloads sheet. Stores only what a person
+  //   chooses to enter (email/role). No name, no organization.
+  //
+  // FEEDBACK_FORM: the Google Form for feedback. Its responses must be linked to
+  //   the EYEUM Feedback sheet in the same account.
+  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyC4ZjvPeSPdB_bbES3CJetF2trCiNYB53TOu4dQG9PnBsNUzBLR3Y2zmDtoRq7yjXuTQ/exec";
   var LINKS = {
     android: "https://github.com/aly2027/eye-gaze-als/releases/download/v1.0/app-release.apk",
     ios:     "",   // TestFlight link — add when ready
