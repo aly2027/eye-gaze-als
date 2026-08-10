@@ -1,4 +1,4 @@
-/* GazeSpeak — shared language handling for index.html, privacy.html, disclaimer.html
+/* EYEUM — shared language handling for index.html, privacy.html, disclaimer.html
  *
  * Load this in <head> (no defer) so the language is known before the page paints:
  *   <script src="i18n.js"></script>
@@ -53,9 +53,9 @@
 
   var DICT = {
     en: {
-      "page.title.index": "GazeSpeak — Communicate with Your Eyes",
-      "page.title.privacy": "Privacy Policy — GazeSpeak",
-      "page.title.disclaimer": "Disclaimer & Terms of Use — GazeSpeak",
+      "page.title.index": "EYEUM — Communicate with Your Eyes",
+      "page.title.privacy": "Privacy Policy — EYEUM",
+      "page.title.disclaimer": "Disclaimer & Terms of Use — EYEUM",
 
       "nav.features": "Features",
       "nav.how": "How it works",
@@ -66,7 +66,7 @@
 
       "hero.eyebrow": "Eye-gaze communication",
       "hero.h1": "Speak again, <em>with your eyes</em>.",
-      "hero.lead": "GazeSpeak lets people living with ALS speak words using only eye movements — no touch, no controllers, no expensive hardware.",
+      "hero.lead": "EYEUM lets people living with ALS speak words using only eye movements — no touch, no controllers, no expensive hardware.",
       "hero.btn.download": "Download the app",
       "hero.btn.how": "See how it works",
       "hero.note": "Free · Works on a standard tablet or smartphone camera · No account required",
@@ -90,7 +90,7 @@
 
       "feat.eyebrow": "Powerful, simple",
       "feat.h2": "Low-cost communication that asks the least of the patient.",
-      "feat.p": "GazeSpeak pairs camera-based eye tracking with a board where the words you use most are always the fastest to reach.",
+      "feat.p": "EYEUM pairs camera-based eye tracking with a board where the words you use most are always the fastest to reach.",
       "feat.1.h": "Camera-based eye tracking",
       "feat.1.p": "Uses the front camera of a standard phone or tablet, and only left and right eye movements. No headset, no infrared rig, no calibration lab required.",
       "feat.2.h": "Frequency-ordered board",
@@ -110,9 +110,9 @@
       "how.3.p": "Gazing at the center for about two seconds completes the code. If it matches a word in the book, the app speaks it aloud through the device speaker.",
 
       "dl.eyebrow": "Get the app",
-      "dl.h2": "Download GazeSpeak",
+      "dl.h2": "Download EYEUM",
       "dl.sub": "Free for individuals, families, and care organizations. The details below are optional — share only what you'd like.",
-      "dl.copy": "GazeSpeak runs on a standard Android tablet or phone. Confirm the notice below to get the download links, a quick-start guide, and the full manual.",
+      "dl.copy": "EYEUM runs on a standard Android tablet or phone. Confirm the notice below to get the download links, a quick-start guide, and the full manual.",
       "dl.li1": "Free forever for personal and clinical use",
       "dl.li2": "Includes a quick-start guide and a full manual (English · 한국어)",
       "dl.li3": "Personal details are optional — none are required",
@@ -130,12 +130,12 @@
       "role.org": "ALS organization / nonprofit",
       "role.researcher": "Researcher",
       "role.other": "Other",
-      "consent.privacy": "If I entered any details above, I agree the GazeSpeak team may use them to provide support and occasional updates. I can ask to be removed at any time. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a>",
-      "consent.disclaimer": "<strong>Required:</strong> I understand GazeSpeak is a communication aid, not a medical device, and must not be relied on alone in emergencies or for life-critical communication. <a href=\"disclaimer.html\" target=\"_blank\" rel=\"noopener\">Read the full disclaimer</a>",
+      "consent.privacy": "If I entered any details above, I agree the EYEUM team may use them to provide support and occasional updates. I can ask to be removed at any time. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a>",
+      "consent.disclaimer": "<strong>Required:</strong> I understand EYEUM is a communication aid, not a medical device, and must not be relied on alone in emergencies or for life-critical communication. <a href=\"disclaimer.html\" target=\"_blank\" rel=\"noopener\">Read the full disclaimer</a>",
 
       "pledge.h4": "One small favour",
-      "pledge.p": "GazeSpeak is a research project, and it improves only when people tell us how it went. Please use it for a week or two with the person you're supporting, then come back to this site and leave your notes. What didn't work matters most.",
-      "pledge.where": "The feedback form lives at the <strong>bottom of this page</strong>, under <strong>\"Already tried GazeSpeak?\"</strong> — or use the <strong>Feedback</strong> link in the top menu whenever you return.",
+      "pledge.p": "EYEUM is a research project, and it improves only when people tell us how it went. Please use it for a week or two with the person you're supporting, then come back to this site and leave your notes. What didn't work matters most.",
+      "pledge.where": "The feedback form lives at the <strong>bottom of this page</strong>, under <strong>\"Already tried EYEUM?\"</strong> — or use the <strong>Feedback</strong> link in the top menu whenever you return.",
       "pledge.consent": "Yes — I'll come back and share how it went.",
       "form.submit": "Continue to download",
 
@@ -144,10 +144,10 @@
       "dl.android": "Android (APK)",
       "dl.ios": "iOS (TestFlight)",
       "dl.sep": "User manual · 사용 설명서",
-      "dl.reminder": "Reminder: keep a reliable backup way to call for help. GazeSpeak should not be your only means of communication in an emergency.",
+      "dl.reminder": "Reminder: keep a reliable backup way to call for help. EYEUM should not be your only means of communication in an emergency.",
 
       "fb.eyebrow": "Your experience matters",
-      "fb.h2": "Already tried GazeSpeak?",
+      "fb.h2": "Already tried EYEUM?",
       "fb.p": "We're building this with the ALS community, not just for it. If you'd like to share how it went — what worked, what didn't, what would help — we'd be grateful. It's completely optional.",
       "fb.btn": "Share your feedback",
 
@@ -156,21 +156,21 @@
       "foot.contact": "Get in touch",
       "foot.privacy": "Privacy Policy",
       "foot.disclaimer": "Disclaimer",
-      "foot.copyright": "© 2026 GazeSpeak. Built for those finding their voice.",
-      "foot.made": "Made with care by the GazeSpeak research team.",
+      "foot.copyright": "© 2026 EYEUM. Built for those finding their voice.",
+      "foot.made": "Made with care by the EYEUM research team.",
 
       "legal.back": "← Back to site",
       "legal.eyebrow": "Legal",
       "legal.updated": "Last updated: ",
       "legal.privacy.h1": "Privacy Policy",
       "legal.disclaimer.h1": "Disclaimer & Terms of Use",
-      "legal.footer": "GazeSpeak — Eye-gaze communication for people with ALS."
+      "legal.footer": "EYEUM — Eye-gaze communication for people with ALS."
     },
 
     ko: {
-      "page.title.index": "GazeSpeak — 눈으로 말하다",
-      "page.title.privacy": "개인정보처리방침 — GazeSpeak",
-      "page.title.disclaimer": "고지사항 및 이용약관 — GazeSpeak",
+      "page.title.index": "EYEUM — 눈으로 말하다",
+      "page.title.privacy": "개인정보처리방침 — EYEUM",
+      "page.title.disclaimer": "고지사항 및 이용약관 — EYEUM",
 
       "nav.features": "주요 기능",
       "nav.how": "사용 방법",
@@ -181,7 +181,7 @@
 
       "hero.eyebrow": "시선 응시 의사소통",
       "hero.h1": "다시 말하세요, <em>눈으로</em>.",
-      "hero.lead": "GazeSpeak는 ALS(루게릭병) 환자가 눈의 움직임만으로 단어를 말할 수 있게 합니다. 터치도, 별도 기기도, 비싼 장비도 필요하지 않습니다.",
+      "hero.lead": "EYEUM은 ALS(루게릭병) 환자가 눈의 움직임만으로 단어를 말할 수 있게 합니다. 터치도, 별도 기기도, 비싼 장비도 필요하지 않습니다.",
       "hero.btn.download": "앱 다운로드",
       "hero.btn.how": "사용 방법 보기",
       "hero.note": "무료 · 일반 태블릿이나 스마트폰 카메라로 작동 · 계정 불필요",
@@ -205,7 +205,7 @@
 
       "feat.eyebrow": "강력하고 단순하게",
       "feat.h2": "환자의 노력을 최소화하는 저비용 의사소통.",
-      "feat.p": "GazeSpeak는 카메라 기반 시선 추적과 단어판을 결합했습니다. 자주 쓰는 단어일수록 더 적은 시선 움직임으로 닿습니다.",
+      "feat.p": "EYEUM은 카메라 기반 시선 추적과 단어판을 결합했습니다. 자주 쓰는 단어일수록 더 적은 시선 움직임으로 닿습니다.",
       "feat.1.h": "카메라 기반 시선 추적",
       "feat.1.p": "일반 스마트폰이나 태블릿의 전면 카메라만 사용하며, 좌우 시선 움직임만으로 조작합니다. 헤드셋도, 적외선 장비도, 별도의 보정 과정도 필요 없습니다.",
       "feat.2.h": "사용 빈도순 단어판",
@@ -225,9 +225,9 @@
       "how.3.p": "약 2초간 중앙을 응시하면 코드가 완성됩니다. 완성된 코드가 단어북에 있는 단어와 일치하면 기기 스피커로 음성이 출력됩니다.",
 
       "dl.eyebrow": "앱 받기",
-      "dl.h2": "GazeSpeak 다운로드",
+      "dl.h2": "EYEUM 다운로드",
       "dl.sub": "개인, 가족, 돌봄 기관 모두 무료로 사용하실 수 있습니다. 아래 항목은 모두 선택 사항이니 원하시는 만큼만 남겨주세요.",
-      "dl.copy": "GazeSpeak는 일반 안드로이드 태블릿이나 스마트폰에서 작동합니다. 아래 고지사항에 동의하시면 다운로드 링크와 빠른 시작 안내, 전체 설명서를 받으실 수 있습니다.",
+      "dl.copy": "EYEUM은 일반 안드로이드 태블릿이나 스마트폰에서 작동합니다. 아래 고지사항에 동의하시면 다운로드 링크와 빠른 시작 안내, 전체 설명서를 받으실 수 있습니다.",
       "dl.li1": "개인 및 임상 목적으로 계속 무료",
       "dl.li2": "빠른 시작 안내와 전체 설명서 포함 (한국어 · English)",
       "dl.li3": "개인 정보 입력은 선택 사항이며, 필수 항목은 없습니다",
@@ -245,12 +245,12 @@
       "role.org": "ALS 관련 단체 / 비영리기관",
       "role.researcher": "연구자",
       "role.other": "기타",
-      "consent.privacy": "위 항목을 입력한 경우, GazeSpeak 팀이 지원 및 소식 안내를 위해 이를 사용하는 데 동의합니다. 언제든지 삭제를 요청할 수 있습니다. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener\">개인정보처리방침</a>",
-      "consent.disclaimer": "<strong>필수:</strong> GazeSpeak는 의료기기가 아닌 보조 의사소통 도구이며, 응급 상황이나 생명과 직결된 의사소통에서 이 앱에만 의존해서는 안 된다는 점을 이해합니다. <a href=\"disclaimer.html\" target=\"_blank\" rel=\"noopener\">전체 고지사항 읽기</a>",
+      "consent.privacy": "위 항목을 입력한 경우, EYEUM 팀이 지원 및 소식 안내를 위해 이를 사용하는 데 동의합니다. 언제든지 삭제를 요청할 수 있습니다. <a href=\"privacy.html\" target=\"_blank\" rel=\"noopener\">개인정보처리방침</a>",
+      "consent.disclaimer": "<strong>필수:</strong> EYEUM은 의료기기가 아닌 보조 의사소통 도구이며, 응급 상황이나 생명과 직결된 의사소통에서 이 앱에만 의존해서는 안 된다는 점을 이해합니다. <a href=\"disclaimer.html\" target=\"_blank\" rel=\"noopener\">전체 고지사항 읽기</a>",
 
       "pledge.h4": "한 가지 부탁드립니다",
-      "pledge.p": "GazeSpeak는 연구 프로젝트입니다. 사용해 보신 분들의 이야기가 있어야 개선할 수 있습니다. 환자분과 함께 1~2주 정도 사용해 보신 뒤, 이 사이트에 다시 방문하여 후기를 남겨주세요. 잘 안 됐던 점이 가장 큰 도움이 됩니다.",
-      "pledge.where": "피드백 양식은 <strong>이 페이지 맨 아래</strong> <strong>\"Already tried GazeSpeak?\"</strong> 섹션에 있습니다. 다시 방문하실 때는 상단 메뉴의 <strong>피드백</strong> 링크를 이용하셔도 됩니다.",
+      "pledge.p": "EYEUM은 연구 프로젝트입니다. 사용해 보신 분들의 이야기가 있어야 개선할 수 있습니다. 환자분과 함께 1~2주 정도 사용해 보신 뒤, 이 사이트에 다시 방문하여 후기를 남겨주세요. 잘 안 됐던 점이 가장 큰 도움이 됩니다.",
+      "pledge.where": "피드백 양식은 <strong>이 페이지 맨 아래</strong> <strong>\"Already tried EYEUM?\"</strong> 섹션에 있습니다. 다시 방문하실 때는 상단 메뉴의 <strong>피드백</strong> 링크를 이용하셔도 됩니다.",
       "pledge.consent": "네 — 사용해 본 뒤 다시 방문해 후기를 남기겠습니다.",
       "form.submit": "다운로드로 계속하기",
 
@@ -259,10 +259,10 @@
       "dl.android": "안드로이드 (APK)",
       "dl.ios": "iOS (TestFlight)",
       "dl.sep": "사용 설명서 · User manual",
-      "dl.reminder": "안내: 도움을 요청할 수 있는 다른 수단을 반드시 함께 준비해 주세요. 응급 상황에서 GazeSpeak가 유일한 의사소통 수단이 되어서는 안 됩니다.",
+      "dl.reminder": "안내: 도움을 요청할 수 있는 다른 수단을 반드시 함께 준비해 주세요. 응급 상황에서 EYEUM이 유일한 의사소통 수단이 되어서는 안 됩니다.",
 
       "fb.eyebrow": "여러분의 경험이 중요합니다",
-      "fb.h2": "GazeSpeak를 사용해 보셨나요?",
+      "fb.h2": "EYEUM을 사용해 보셨나요?",
       "fb.p": "저희는 ALS 커뮤니티를 위해서가 아니라, 함께 이 도구를 만들고 있습니다. 무엇이 좋았고 무엇이 불편했는지, 무엇이 있으면 좋겠는지 알려주시면 큰 도움이 됩니다. 물론 선택 사항입니다.",
       "fb.btn": "피드백 남기기",
 
@@ -271,15 +271,15 @@
       "foot.contact": "연락처",
       "foot.privacy": "개인정보처리방침",
       "foot.disclaimer": "고지사항",
-      "foot.copyright": "© 2026 GazeSpeak. 목소리를 찾는 모든 분들을 위해.",
-      "foot.made": "GazeSpeak 연구팀이 정성을 담아 만들었습니다.",
+      "foot.copyright": "© 2026 EYEUM. 목소리를 찾는 모든 분들을 위해.",
+      "foot.made": "EYEUM 연구팀이 정성을 담아 만들었습니다.",
 
       "legal.back": "← 사이트로 돌아가기",
       "legal.eyebrow": "법적 고지",
       "legal.updated": "최종 수정일: ",
       "legal.privacy.h1": "개인정보처리방침",
       "legal.disclaimer.h1": "고지사항 및 이용약관",
-      "legal.footer": "GazeSpeak — ALS 환자를 위한 시선 응시 의사소통."
+      "legal.footer": "EYEUM — ALS 환자를 위한 시선 응시 의사소통."
     }
   };
 

@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GazeSpeak — Communicate with Your Eyes</title>
+<title>EYEUM — Communicate with Your Eyes</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script src="i18n.js"></script>
-<meta name="description" content="GazeSpeak helps people living with ALS and other motor neuron diseases communicate again using eye-gaze tracking. Free, accessible AAC technology built to restore independence and voice.">
+<meta name="description" content="EYEUM helps people living with ALS and other motor neuron diseases communicate again using eye-gaze tracking. Free, accessible AAC technology built to restore independence and voice.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -42,7 +44,10 @@
   /* NAV */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,239,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{display:flex;align-items:center;gap:11px;font-family:"Fraunces",serif;font-size:21px;font-weight:600;letter-spacing:-.02em}
+  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand-logo{height:30px;width:auto;display:block}
+  .foot-logo{height:28px;width:auto;display:block}
+  @media(max-width:520px){.brand-logo{height:25px}}
   .mark{width:34px;height:34px;flex:none}
   .nav-links{display:flex;gap:30px;font-size:14.5px;font-weight:500}
   .nav-links a{color:var(--ink-soft);text-decoration:none;transition:color .2s}
@@ -193,14 +198,9 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <div class="brand">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <rect width="40" height="40" rx="11" fill="#0f6e6a"/>
-        <path d="M8 20c3.5-5.5 8-8.2 12-8.2S28.5 14.5 32 20c-3.5 5.5-8 8.2-12 8.2S11.5 25.5 8 20Z" stroke="#f6f4ef" stroke-width="2" fill="none"/>
-        <circle cx="20" cy="20" r="4.4" fill="#e8a13a"/>
-      </svg>
-      GazeSpeak
-    </div>
+    <a class="brand" href="index.html" aria-label="EYEUM — home">
+      <img src="eyeum-logo.png" alt="EYEUM" class="brand-logo">
+    </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#features" data-i18n="nav.features">Features</a>
       <a href="#how" data-i18n="nav.how">How it works</a>
@@ -224,7 +224,7 @@
     <div>
       <span class="eyebrow" data-i18n="hero.eyebrow">Eye-gaze communication</span>
       <h1 data-i18n="hero.h1">Speak again, <em>with your eyes</em>.</h1>
-      <p class="lead" data-i18n="hero.lead">GazeSpeak lets people living with ALS speak words using only eye movements — no touch, no controllers, no expensive hardware.</p>
+      <p class="lead" data-i18n="hero.lead">EYEUM lets people living with ALS speak words using only eye movements — no touch, no controllers, no expensive hardware.</p>
       <div class="hero-actions">
         <a href="#download" class="btn btn-primary">
           <span data-i18n="hero.btn.download">Download the app</span>
@@ -275,7 +275,7 @@
     <div class="section-head">
       <span class="eyebrow" data-i18n="feat.eyebrow">Powerful, simple</span>
       <h2 data-i18n="feat.h2">Low-cost communication that asks the least of the patient.</h2>
-      <p data-i18n="feat.p">GazeSpeak pairs camera-based eye tracking with a board where the words you use most are always the fastest to reach.</p>
+      <p data-i18n="feat.p">EYEUM pairs camera-based eye tracking with a board where the words you use most are always the fastest to reach.</p>
     </div>
     <div class="features">
       <div class="feature">
@@ -331,12 +331,12 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" style="color:var(--amber)" data-i18n="dl.eyebrow">Get the app</span>
-      <h2 data-i18n="dl.h2">Download GazeSpeak</h2>
+      <h2 data-i18n="dl.h2">Download EYEUM</h2>
       <p data-i18n="dl.sub">Free for individuals, families, and care organizations. The details below are optional — share only what you'd like.</p>
     </div>
     <div class="dl-grid">
       <div class="dl-copy">
-        <p style="font-size:16px;color:rgba(255,255,255,.9)" data-i18n="dl.copy">GazeSpeak runs on a standard Android tablet or phone. Confirm the notice below to get the download links, a quick-start guide, and the full manual.</p>
+        <p style="font-size:16px;color:rgba(255,255,255,.9)" data-i18n="dl.copy">EYEUM runs on a standard Android tablet or phone. Confirm the notice below to get the download links, a quick-start guide, and the full manual.</p>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="dl.li1">Free forever for personal and clinical use</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="dl.li2">Includes a quick-start guide and a full manual (English · 한국어)</span></li>
@@ -368,16 +368,16 @@
           </div>
           <label class="consent">
             <input id="consent-privacy" type="checkbox">
-            <span data-i18n="consent.privacy">If I entered any details above, I agree the GazeSpeak team may use them to provide support and occasional updates. I can ask to be removed at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
+            <span data-i18n="consent.privacy">If I entered any details above, I agree the EYEUM team may use them to provide support and occasional updates. I can ask to be removed at any time. <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></span>
           </label>
           <label class="consent">
             <input id="consent-disclaimer" type="checkbox" required>
-            <span data-i18n="consent.disclaimer"><strong>Required:</strong> I understand GazeSpeak is a communication aid, not a medical device, and must not be relied on alone in emergencies or for life-critical communication. <a href="disclaimer.html" target="_blank" rel="noopener">Read the full disclaimer</a></span>
+            <span data-i18n="consent.disclaimer"><strong>Required:</strong> I understand EYEUM is a communication aid, not a medical device, and must not be relied on alone in emergencies or for life-critical communication. <a href="disclaimer.html" target="_blank" rel="noopener">Read the full disclaimer</a></span>
           </label>
           <div class="pledge">
             <h4 data-i18n="pledge.h4">One small favour</h4>
-            <p data-i18n="pledge.p">GazeSpeak is a research project, and it improves only when people tell us how it went. Please use it for a week or two with the person you're supporting, then come back to this site and leave your notes. What didn't work matters most.</p>
-            <p class="where" data-i18n="pledge.where">The feedback form lives at the <strong>bottom of this page</strong>, under <strong>"Already tried GazeSpeak?"</strong> — or use the <strong>Feedback</strong> link in the top menu whenever you return.</p>
+            <p data-i18n="pledge.p">EYEUM is a research project, and it improves only when people tell us how it went. Please use it for a week or two with the person you're supporting, then come back to this site and leave your notes. What didn't work matters most.</p>
+            <p class="where" data-i18n="pledge.where">The feedback form lives at the <strong>bottom of this page</strong>, under <strong>"Already tried EYEUM?"</strong> — or use the <strong>Feedback</strong> link in the top menu whenever you return.</p>
             <label class="consent">
               <input id="pledge-feedback" type="checkbox">
               <span data-i18n="pledge.consent">Yes — I'll come back and share how it went.</span>
@@ -416,7 +416,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
             </a>
           </div>
-          <p class="reminder" data-i18n="dl.reminder">Reminder: keep a reliable backup way to call for help. GazeSpeak should not be your only means of communication in an emergency.</p>
+          <p class="reminder" data-i18n="dl.reminder">Reminder: keep a reliable backup way to call for help. EYEUM should not be your only means of communication in an emergency.</p>
         </div>
       </div>
     </div>
@@ -427,7 +427,7 @@
 <section id="feedback">
   <div class="wrap fb-inner">
     <span class="eyebrow" data-i18n="fb.eyebrow">Your experience matters</span>
-    <h2 style="font-size:clamp(28px,4vw,40px);margin-bottom:14px" data-i18n="fb.h2">Already tried GazeSpeak?</h2>
+    <h2 style="font-size:clamp(28px,4vw,40px);margin-bottom:14px" data-i18n="fb.h2">Already tried EYEUM?</h2>
     <p style="color:var(--ink-soft);font-size:17px" data-i18n="fb.p">We're building this with the ALS community, not just for it. If you'd like to share how it went — what worked, what didn't, what would help — we'd be grateful. It's completely optional.</p>
     <a href="#" class="btn btn-primary" id="fb-link" target="_blank" rel="noopener">
       <span data-i18n="fb.btn">Share your feedback</span>
@@ -442,12 +442,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <rect width="40" height="40" rx="11" fill="#0f6e6a"/>
-            <path d="M8 20c3.5-5.5 8-8.2 12-8.2S28.5 14.5 32 20c-3.5 5.5-8 8.2-12 8.2S11.5 25.5 8 20Z" stroke="#f6f4ef" stroke-width="2" fill="none"/>
-            <circle cx="20" cy="20" r="4.4" fill="#e8a13a"/>
-          </svg>
-          GazeSpeak
+          <img src="eyeum-logo-light.png" alt="EYEUM" class="foot-logo">
         </div>
         <p data-i18n="foot.tagline">Restoring voice and independence for people living with ALS through accessible eye-gaze communication.</p>
       </div>
@@ -466,8 +461,8 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span data-i18n="foot.copyright">© 2026 GazeSpeak. Built for those finding their voice.</span>
-      <span data-i18n="foot.made">Made with care by the GazeSpeak research team.</span>
+      <span data-i18n="foot.copyright">© 2026 EYEUM. Built for those finding their voice.</span>
+      <span data-i18n="foot.made">Made with care by the EYEUM research team.</span>
     </div>
   </div>
 </footer>
