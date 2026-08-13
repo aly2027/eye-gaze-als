@@ -123,7 +123,9 @@
   #download{background:linear-gradient(160deg,#0f6e6a,#0a4d4a);color:#fff}
   #download .section-head h2{color:#fff}
   #download .section-head p{color:rgba(255,255,255,.8)}
-  .dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  /* start, not center: otherwise the shorter left column floats down to the
+     middle of the taller form card and leaves a gap under the heading. */
+  .dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
   .dl-copy ul{list-style:none;margin-top:22px;display:grid;gap:14px}
   .dl-copy li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:rgba(255,255,255,.9)}
   .dl-copy li svg{flex:none;margin-top:3px;color:var(--amber)}
@@ -190,6 +192,21 @@
   .lang-nav button:hover{border-color:var(--teal);color:var(--teal)}
   .lang-nav button.active{background:var(--teal);border-color:var(--teal);color:#fff}
   @media(max-width:520px){.lang-nav{margin-left:10px}.lang-nav button{padding:6px 10px;font-size:12px}}
+
+  /* Korean line breaking.
+     Korean has no spaces inside a phrase, so the browser will happily split
+     "대화합니다" into "대화합 / 니다". keep-all forces breaks at word
+     boundaries instead. Headings also need slightly smaller sizes, since
+     Hangul glyphs read much larger than Latin ones at the same pixel size. */
+  html[lang="ko"] body{word-break:keep-all;overflow-wrap:break-word}
+  html[lang="ko"] .hero h1{font-size:clamp(34px,4.8vw,52px);line-height:1.25}
+  html[lang="ko"] .section-head h2{font-size:clamp(25px,3.2vw,34px);line-height:1.3}
+  html[lang="ko"] .dl-copy h2{font-size:clamp(25px,3.2vw,34px)}
+  html[lang="ko"] .fb-h2{font-size:clamp(25px,3.2vw,33px);line-height:1.3}
+  html[lang="ko"] .card h3,
+  html[lang="ko"] .dl-success h3{font-size:23px;line-height:1.35}
+  html[lang="ko"] .step h3,
+  html[lang="ko"] .feature h3{line-height:1.35}
 
   :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
 </style>
@@ -427,7 +444,7 @@
 <section id="feedback">
   <div class="wrap fb-inner">
     <span class="eyebrow" data-i18n="fb.eyebrow">Your experience matters</span>
-    <h2 style="font-size:clamp(28px,4vw,40px);margin-bottom:14px" data-i18n="fb.h2">Already tried EYEUM?</h2>
+    <h2 class="fb-h2" style="font-size:clamp(28px,4vw,40px);margin-bottom:14px" data-i18n="fb.h2">Already tried EYEUM?</h2>
     <p style="color:var(--ink-soft);font-size:17px" data-i18n="fb.p">We're building this with the ALS community, not just for it. If you'd like to share how it went — what worked, what didn't, what would help — we'd be grateful. It's completely optional.</p>
     <a href="#" class="btn btn-primary" id="fb-link" target="_blank" rel="noopener">
       <span data-i18n="fb.btn">Share your feedback</span>
