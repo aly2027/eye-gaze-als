@@ -145,6 +145,21 @@
       "dl.ios": "iOS (TestFlight)",
       "dl.sep": "User manual · 사용 설명서",
       "dl.reminder": "Reminder: keep a reliable backup way to call for help. EYEUM should not be your only means of communication in an emergency.",
+      "install.title": "If install is blocked or you see a warning — step by step",
+      "install.lead": "EYEUM is distributed from this site rather than the Play Store for now, so Android shows a few confirmation screens while it installs. They don't mean anything is wrong with the app.",
+      "install.s1": "Tap <strong>Download</strong>.",
+      "install.s2": "Tap <strong>Settings</strong>.",
+      "install.s3": "Turn on <strong>Allow permission</strong>, then go back.",
+      "install.s4": "Tap the <strong>left button</strong>. The one on the right cancels the install.",
+      "install.s5": "Tap <strong>Install</strong>.",
+      "install.s6": "That's it. Tap <strong>Open</strong> to start.",
+      "install.note": "Depending on the device, the order may differ slightly, or Google Play Protect may offer to scan the app first. Let it scan and carry on.",
+      "install.after": "Once it is installed you can turn <strong>Allow permission</strong> back off. EYEUM will keep working.",
+      "install.contact": "Still stuck? Email contact.eyeum@gmail.com and tell us which device you are using.",
+      "install.tech": "For IT and hospital administrators",
+      "install.tech.src": "Published from: github.com/aly2027/eye-gaze-als",
+      "install.tech.file": "File: <code>EYEUM.apk</code> (19.0 MB)",
+      "install.tech.pkg": "Package: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "Your experience matters",
       "fb.h2": "Already tried EYEUM?",
@@ -260,6 +275,21 @@
       "dl.ios": "iOS (TestFlight)",
       "dl.sep": "사용 설명서 · User manual",
       "dl.reminder": "도움을 요청할 다른 방법을 꼭 함께 준비해 주세요. 급한 상황에서 EYEUM 하나에만 기대서는 안 됩니다.",
+      "install.title": "설치가 안 되거나 경고가 나올 때 — 화면으로 따라하기",
+      "install.lead": "EYEUM은 아직 플레이 스토어가 아닌 이 사이트에서 직접 배포하고 있습니다. 그래서 설치 중에 확인 화면이 몇 번 나타납니다. 앱에 문제가 있다는 뜻이 아니라, 스토어 밖에서 받은 파일일 때 안드로이드가 늘 보여주는 화면입니다.",
+      "install.s1": "<strong>다운로드</strong>를 누릅니다.",
+      "install.s2": "<strong>설정</strong>을 누릅니다.",
+      "install.s3": "<strong>권한 허용</strong> 스위치를 켜고 뒤로 갑니다.",
+      "install.s4": "<strong>왼쪽 버튼</strong>을 누릅니다. 오른쪽을 누르면 설치가 취소됩니다.",
+      "install.s5": "<strong>설치</strong>를 누릅니다.",
+      "install.s6": "설치가 끝났습니다. <strong>열기</strong>를 누르면 시작합니다.",
+      "install.note": "기기와 설정에 따라 화면 순서가 조금 다르거나, 중간에 구글 Play 프로텍트의 앱 검사 화면이 추가로 나올 수 있습니다. 검사를 진행하시면 됩니다.",
+      "install.after": "설치가 끝난 뒤에는 <strong>권한 허용</strong>을 다시 꿐두셔도 됩니다. EYEUM 사용에는 영향이 없습니다.",
+      "install.contact": "그래도 설치되지 않으면 contact.eyeum@gmail.com 으로 기기 이름과 함께 알려주세요.",
+      "install.tech": "기관·병원 담당자용 확인 정보",
+      "install.tech.src": "배포처: github.com/aly2027/eye-gaze-als",
+      "install.tech.file": "파일: <code>EYEUM.apk</code> (19.0 MB)",
+      "install.tech.pkg": "패키지: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "써보신 이야기를 들려주세요",
       "fb.h2": "EYEUM을 사용해 보셨나요?",
@@ -341,11 +371,22 @@
     root.setAttribute("data-lang", lang);
   }
 
+  // Install-guide screenshots come in a Korean set and an English set.
+  function swapInstallShots(lang) {
+    var shots = document.querySelectorAll(".install-shot");
+    for (var i = 0; i < shots.length; i++) {
+      var src = shots[i].getAttribute("src");
+      if (!src) continue;
+      shots[i].setAttribute("src", src.replace(/\/(ko|en)-(\d+)\.jpg/, "/" + lang + "-$2.jpg"));
+    }
+  }
+
   function apply(lang) {
     current = lang;
     markRoot(lang);
     if (!document.body) return;           // called too early; DOMContentLoaded will redo it
     translate(lang);
+    swapInstallShots(lang);
     swapBlocks(lang);
     markButtons(lang);
     tagInternalLinks(lang);
