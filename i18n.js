@@ -83,8 +83,8 @@
       "mock.w01": "No",
       "mock.w10": "Repeat",
       "mock.w11": "Wait",
-      "mock.w000": "Chest pain",
-      "mock.w011": "Thank you",
+      "mock.w000": "Thirsty",
+      "mock.w011": "Uncomfortable",
       "mock.w100": "\u2192 PAIN",
       "mock.w111": "\u2192 FEELING",
 
@@ -158,7 +158,7 @@
       "install.contact": "Still stuck? Email contact.eyeum@gmail.com and tell us which device you are using.",
       "install.tech": "For IT and hospital administrators",
       "install.tech.src": "Published from: github.com/aly2027/eye-gaze-als",
-      "install.tech.file": "File: <code>EYEUM.apk</code> (19.0 MB)",
+      "install.tech.file": "File: <code>EYEUM.apk</code> \u00b7 version 1.3.2",
       "install.tech.pkg": "Package: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "Your experience matters",
@@ -213,8 +213,8 @@
       "mock.w01": "아니오",
       "mock.w10": "다시해요",
       "mock.w11": "기다려요",
-      "mock.w000": "가슴 아파",
-      "mock.w011": "고마워",
+      "mock.w000": "목말라요",
+      "mock.w011": "불편해",
       "mock.w100": "\u2192 통증",
       "mock.w111": "\u2192 감정",
 
@@ -288,7 +288,7 @@
       "install.contact": "그래도 설치되지 않으면 contact.eyeum@gmail.com 으로 기기 이름과 함께 알려주세요.",
       "install.tech": "기관·병원 담당자용 확인 정보",
       "install.tech.src": "배포처: github.com/aly2027/eye-gaze-als",
-      "install.tech.file": "파일: <code>EYEUM.apk</code> (19.0 MB)",
+      "install.tech.file": "파일: <code>EYEUM.apk</code> \u00b7 버전 1.3.2",
       "install.tech.pkg": "패키지: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "써보신 이야기를 들려주세요",
