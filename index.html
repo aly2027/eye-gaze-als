@@ -134,7 +134,7 @@
   .routes{margin-top:30px;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
   .routes h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:14px}
   .route{margin-bottom:16px}
-  .route-tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);margin-bottom:3px}
+  .routes-lead{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.8);margin-bottom:16px}
   .route-name{font-size:15.5px;font-weight:600;color:#fff;margin-bottom:4px}
   .route p{font-size:14.5px;line-height:1.62;color:rgba(255,255,255,.82);margin:0}
   .route-note{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.72);background:rgba(0,0,0,.16);border-radius:10px;padding:12px 14px;margin-top:4px}
@@ -149,6 +149,17 @@
   .field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23667' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
   .field select:invalid{color:var(--ink-soft)}
   .field-error{display:none;margin-top:6px;font-size:12.5px;color:#c0392b}
+  .field-label{display:block;font-size:13px;font-weight:500;margin-bottom:7px}
+  .play-addr{font-size:15px;margin:-6px 0 18px;word-break:break-all}
+  .play-addr strong{font-weight:600;color:var(--teal)}
+  .route-pick{display:grid;gap:9px}
+  .field label.pick{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;cursor:pointer;transition:border-color .18s,background .18s}
+  .pick:hover{border-color:var(--ink-soft)}
+  .pick input[type=radio]{width:auto;min-width:0;padding:0;border:0;background:none;border-radius:0;margin-top:3px;flex:none;accent-color:var(--teal)}
+  .pick strong{display:block;font-size:14.5px;font-weight:600}
+  .pick em{display:block;font-style:normal;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+  .pick:has(input:checked){border-color:var(--teal);background:rgba(15,93,86,.05)}
+  .field.invalid .pick{border-color:#c0392b}
   .field.invalid .field-error{display:block}
   .field.invalid input,.field.invalid select{border-color:#c0392b}
   .field input:focus,.field select:focus{outline:none;border-color:var(--teal)}
@@ -404,16 +415,15 @@
         </ul>
 
         <div class="routes">
-          <h3 data-i18n="routes.h">Two ways to install</h3>
+          <h3 data-i18n="routes.h">Two ways to get it</h3>
+          <p class="routes-lead" data-i18n="routes.lead">EYEUM is not publicly listed on Google Play yet, so there are two routes.</p>
           <div class="route">
-            <span class="route-tag" data-i18n="routes.a.tag">Straight away</span>
-            <p class="route-name" data-i18n="routes.a.name">Download the file (APK)</p>
-            <p data-i18n="routes.a.body">The button here gives you the file directly. No account, no waiting. When a new version comes out, you come back to this page to get it.</p>
+            <p class="route-name" data-i18n="routes.a.name">Get it now</p>
+            <p data-i18n="routes.a.body">Download the installation file straight from this site. There's no waiting, but while it installs Android will ask you a few times whether you're sure. Just follow the screens.</p>
           </div>
           <div class="route">
-            <span class="route-tag" data-i18n="routes.b.tag">Via Google Play</span>
-            <p class="route-name" data-i18n="routes.b.name">Tester version</p>
-            <p data-i18n="routes.b.body">Leave a Gmail address in the form and we'll send you an invitation. It takes a few days, but installing is simpler and new versions arrive on their own.</p>
+            <p class="route-name" data-i18n="routes.b.name">Get it through Google Play</p>
+            <p data-i18n="routes.b.body">Leave a Gmail address in the form and we'll send you an invitation. It takes a few days, but then it installs just like any other app and new versions arrive on their own.</p>
           </div>
           <p class="route-note" data-i18n="routes.note">The two are treated as separate apps, so only one can be installed at a time. To switch, remove the one you have first.</p>
         </div>
@@ -424,8 +434,29 @@
           <h3 data-i18n="form.h3">Get the app</h3>
           <p class="sub" data-i18n="form.sub">Only the fields marked <span class="req">*</span> need to be filled in or chosen.</p>
           <div class="field">
-            <label for="email" data-i18n="form.email">Email <span class="opt">(optional — for a Google Play tester invitation)</span></label>
+            <span class="field-label" data-i18n="form.route">How would you like to get it <span class="req">*</span></span>
+            <div class="route-pick">
+              <label class="pick">
+                <input type="radio" name="route" value="now" id="route-now">
+                <span>
+                  <strong data-i18n="routes.a.name">Get it now</strong>
+                  <em data-i18n="form.route.now">File from this site, no waiting</em>
+                </span>
+              </label>
+              <label class="pick">
+                <input type="radio" name="route" value="play" id="route-play">
+                <span>
+                  <strong data-i18n="routes.b.name">Get it through Google Play</strong>
+                  <em data-i18n="form.route.play">Invitation by email, a few days</em>
+                </span>
+              </label>
+            </div>
+            <p class="field-error" id="route-pick-error" data-i18n="form.routeError">Please choose how you'd like to get it.</p>
+          </div>
+          <div class="field" id="email-field" hidden>
+            <label for="email" data-i18n="form.email">Email <span class="req">*</span></label>
             <input id="email" type="email" autocomplete="email">
+            <p class="field-error" id="email-error" data-i18n="form.emailError">Please enter the Gmail address you use on your phone.</p>
           </div>
           <div class="field">
             <label for="role" data-i18n="form.role">I'm downloading as <span class="req">*</span></label>
@@ -457,7 +488,28 @@
             <h4 data-i18n="pledge.h4">One small favour</h4>
             <p data-i18n="pledge.p">EYEUM is a research project, and it improves only when people tell us how it went. Please use it for a week or two with the person you're supporting, then come back to this site and leave your notes. What didn't work matters most.</p>
           </div>
-          <button class="btn btn-primary" id="dl-submit" data-i18n="form.submit">Continue to download</button>
+          <button class="btn btn-primary" id="dl-submit" data-i18n="form.submit">Continue</button>
+        </div>
+
+        <div class="dl-success" id="dl-play-view">
+          <div class="checkmark">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3 data-i18n="play.h3">Your request is in</h3>
+          <p class="sub" data-i18n="play.sub">We'll email an invitation link within a few days. Open it on the phone or tablet signed in with that address, and the app installs from Google Play as usual.</p>
+          <p class="play-addr"><strong id="play-email"></strong></p>
+          <div class="dl-links">
+            <div class="dl-sep" data-i18n="dl.sep">User manual</div>
+            <p class="dl-hint" data-i18n="play.guides">You can read the guides while you wait.</p>
+            <a href="#" id="play-guide-quick">
+              <span id="play-guide-quick-label">Quick start (PDF)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            </a>
+            <a href="#" id="play-guide-full">
+              <span id="play-guide-full-label">Full user manual (PDF)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            </a>
+          </div>
         </div>
 
         <div class="dl-success" id="dl-success-view">
@@ -465,22 +517,18 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
           <h3 data-i18n="success.h3">You're all set</h3>
-          <p class="sub" data-i18n="success.sub">Choose your platform below, then pick the manual in your language.</p>
+          <p class="sub" data-i18n="success.sub">Choose your device below. The guides are underneath.</p>
           <div class="dl-links">
             <a href="#" id="dl-android">
-              <span data-i18n="dl.android">Android (APK)</span>
+              <span data-i18n="dl.android">Android phone or tablet</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
             </a>
             <a href="#" id="dl-ios">
-              <span data-i18n="dl.ios">iOS (TestFlight)</span>
+              <span data-i18n="dl.ios">iPhone or iPad</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
             </a>
-            <div class="dl-sep" data-i18n="dl.sep">User manual · 사용 설명서</div>
+            <div class="dl-sep" data-i18n="dl.sep">User manual</div>
             <p class="dl-hint" id="dl-guide-hint">Start with the quick guide; the full manual covers setup and troubleshooting in detail.</p>
-            <div class="lang-toggle" role="group" aria-label="Manual language">
-              <button type="button" id="lang-en" aria-pressed="true">English</button>
-              <button type="button" id="lang-ko" aria-pressed="false">한국어</button>
-            </div>
             <a href="#" id="dl-guide-quick">
               <span id="dl-guide-quick-label">Quick start (PDF)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
@@ -629,9 +677,18 @@
       el.removeAttribute("href");
       el.style.opacity = ".5";
       el.style.pointerEvents = "none";
-      var first = el.firstChild;
-      if(first && first.nodeType === 3){ first.textContent = soonLabel; }
+      // Replace the label itself, not the whitespace text node before it.
+      var label = el.querySelector("span");
+      if(label){ label.textContent = soonLabel; }
     }
+  }
+
+  function iosSoonLabel(){
+    if(window.GSI18N && GSI18N.dict){
+      var d = GSI18N.dict[GSI18N.get()];
+      if(d && d["dl.iosSoon"]){ return d["dl.iosSoon"]; }
+    }
+    return "iPhone or iPad — coming soon";
   }
 
   // Manual picker: language toggle switches both the short and the full version.
@@ -642,16 +699,16 @@
     en: {
       hint: "Start with the quick guide; the full manual covers setup and troubleshooting in detail.",
       quick: { url: LINKS.quickEn, file: "ALS_EyeGaze_QuickStart_EN.pdf",
-               ready: "Quick start — English (PDF)", soon: "Quick start — coming soon" },
+               ready: "Quick start (PDF)", soon: "Quick start — coming soon" },
       full:  { url: LINKS.fullEn,  file: "ALS_EyeGaze_UserManual_EN.pdf",
-               ready: "Full user manual — English (PDF)", soon: "Full manual — coming soon" }
+               ready: "Full user manual (PDF)", soon: "Full manual — coming soon" }
     },
     ko: {
       hint: "먼저 빠른 시작 안내를 보시고, 자세한 설정과 문제 해결은 전체 설명서를 참고하세요.",
       quick: { url: LINKS.quickKr, file: "ALS_EyeGaze_QuickStart_KR.pdf",
-               ready: "빠른 시작 안내 — 한국어 (PDF)", soon: "빠른 시작 안내 — 준비 중" },
+               ready: "빠른 시작 안내 (PDF)", soon: "빠른 시작 안내 — 준비 중" },
       full:  { url: LINKS.fullKr,  file: "ALS_EyeGaze_UserManual_KR.pdf",
-               ready: "전체 사용 설명서 — 한국어 (PDF)", soon: "전체 사용 설명서 — 준비 중" }
+               ready: "전체 사용 설명서 (PDF)", soon: "전체 사용 설명서 — 준비 중" }
     }
   };
 
@@ -677,12 +734,14 @@
   function setGuideLang(lang){
     var g = GUIDES[lang] || GUIDES.en;
 
-    ["en","ko"].forEach(function(code){
-      var btn = document.getElementById("lang-" + code);
-      if(!btn) return;
-      var on = (code === lang);
-      btn.classList.toggle("on", on);
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    ["lang-", "play-lang-"].forEach(function(prefix){
+      ["en","ko"].forEach(function(code){
+        var btn = document.getElementById(prefix + code);
+        if(!btn) return;
+        var on = (code === lang);
+        btn.classList.toggle("on", on);
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+      });
     });
 
     var hint = document.getElementById("dl-guide-hint");
@@ -690,39 +749,76 @@
 
     applyGuide("dl-guide-quick", g.quick);
     applyGuide("dl-guide-full", g.full);
+    applyGuide("play-guide-quick", g.quick);
+    applyGuide("play-guide-full", g.full);
   }
 
-  ["en","ko"].forEach(function(code){
-    var btn = document.getElementById("lang-" + code);
-    if(btn){ btn.addEventListener("click", function(){ setGuideLang(code); }); }
+  ["lang-", "play-lang-"].forEach(function(prefix){
+    ["en","ko"].forEach(function(code){
+      var btn = document.getElementById(prefix + code);
+      if(btn){ btn.addEventListener("click", function(){ setGuideLang(code); }); }
+    });
   });
 
   // The manual follows the site language, but the reader can still pick the other one.
   if(window.GSI18N){
-    GSI18N.onChange(function(lang){ setGuideLang(lang); });
+    GSI18N.onChange(function(lang){
+      setGuideLang(lang);
+      // The translator resets the iOS label, so re-apply the "coming soon" state.
+      if(!LINKS.ios){ wireLink("dl-ios", LINKS.ios, iosSoonLabel()); }
+    });
   }
 
   document.getElementById("role").addEventListener("change", function(){
     this.closest(".field").classList.remove("invalid");
   });
 
+  // Choosing a route shows or hides the email field.
+  var emailField = document.getElementById("email-field");
+  Array.prototype.forEach.call(document.querySelectorAll("input[name=route]"), function(r){
+    r.addEventListener("change", function(){
+      emailField.hidden = (this.value !== "play");
+      var f = this.closest(".field");
+      if(f){ f.classList.remove("invalid"); }
+    });
+  });
+  document.getElementById("email").addEventListener("input", function(){
+    this.closest(".field").classList.remove("invalid");
+  });
+
   // Download gate.
-  // Only the disclaimer confirmation is required. All personal fields are optional.
+  // Required: the route, the role, and the disclaimer. Email is required for the Play route.
   document.getElementById("dl-submit").addEventListener("click", function(){
     var email = document.getElementById("email");
     var role = document.getElementById("role");
     var consentPrivacy = document.getElementById("consent-privacy");
     var consentDisclaimer = document.getElementById("consent-disclaimer");
+    var routeEl = document.querySelector("input[name=route]:checked");
 
-    // The role is required: it is the only thing we ask everyone for.
-    var roleField = role.closest(".field");
-    if(!role.value){
-      roleField.classList.add("invalid");
-      role.focus();
-      role.scrollIntoView({block:"center", behavior:"smooth"});
+    function fail(el){
+      var f = el.closest(".field");
+      if(f){ f.classList.add("invalid"); }
+      el.focus();
+      el.scrollIntoView({block:"center", behavior:"smooth"});
+    }
+
+    // A route must be chosen.
+    if(!routeEl){
+      fail(document.getElementById("route-now"));
       return;
     }
-    roleField.classList.remove("invalid");
+    var route = routeEl.value;
+
+    // The role is required for both routes.
+    if(!role.value){ fail(role); return; }
+    role.closest(".field").classList.remove("invalid");
+
+    // The Play route needs an address to send the invitation to.
+    var emailVal = email.value.trim();
+    if(route === "play" && (!emailVal || emailVal.indexOf("@") < 1)){
+      fail(email);
+      return;
+    }
 
     // The disclaimer must be acknowledged.
     if(!consentDisclaimer.checked){
@@ -731,19 +827,14 @@
       return;
     }
 
-    // If an email was entered, it must look valid.
-    var emailVal = email.value.trim();
-    if(emailVal && emailVal.indexOf("@") < 1){
-      email.focus();
-      return;
-    }
-
-    // The role is always sent. Email is sent only with the privacy consent.
+    // The Play route always sends the address — it is the whole point of that route.
+    // On the direct route nothing is sent unless the privacy box was ticked.
     if(FORM_ENDPOINT && FORM_ENDPOINT.indexOf("http") === 0){
-      var sendEmail = (emailVal && consentPrivacy.checked) ? emailVal : "";
+      var sendEmail = (route === "play") ? emailVal : (consentPrivacy.checked ? emailVal : "");
       var payload = {
         email: sendEmail,
         role: role.value,
+        route: route,
         timestamp: new Date().toISOString()
       };
       // text/plain + no-cors avoids a CORS preflight (Apps Script doesn't answer preflights).
@@ -755,12 +846,19 @@
       }).catch(function(){/* ignore — still let the user download */});
     }
 
-    // Reveal the download links.
-    wireLink("dl-android", LINKS.android, "");
-    wireLink("dl-ios", LINKS.ios, "iOS — coming soon");
-    setGuideLang(window.GSI18N ? GSI18N.get() : "en");
-
     document.getElementById("dl-form-view").style.display = "none";
+
+    if(route === "play"){
+      document.getElementById("play-email").textContent = emailVal;
+      setGuideLang(window.GSI18N ? GSI18N.get() : "en");
+      document.getElementById("dl-play-view").classList.add("show");
+      return;
+    }
+
+    // Direct route: reveal the download links.
+    wireLink("dl-android", LINKS.android, "");
+    wireLink("dl-ios", LINKS.ios, iosSoonLabel());
+    setGuideLang(window.GSI18N ? GSI18N.get() : "en");
     document.getElementById("dl-success-view").classList.add("show");
   });
 </script>
