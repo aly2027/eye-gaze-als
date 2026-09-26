@@ -98,7 +98,7 @@
       "feat.3.h": "Speaks out loud",
       "feat.3.p": "Each completed word is read aloud with built-in text-to-speech, so caregivers hear it instantly.",
       "feat.4.h": "Made for real use",
-      "feat.4.p": "Large targets, high-contrast text, and quick caregiver phrases designed with accessibility first — not as an afterthought.",
+      "feat.4.p": "Text sized to fill the screen, a voice-guided practice mode for first-time users, and quick caregiver phrases — designed with accessibility first, not as an afterthought.",
 
       "how.eyebrow": "How it works",
       "how.h2": "From a short code to a spoken word.",
@@ -107,7 +107,7 @@
       "how.2.h": "Build the code with left and right",
       "how.2.p": "A glance to the left adds a 0, a glance to the right adds a 1. Each digit appears on screen as it is entered, so the code can be followed as it forms.",
       "how.3.h": "Hold the center to speak",
-      "how.3.p": "Gazing at the center for about two seconds completes the code. If it matches a word in the book, the app speaks it aloud through the device speaker.",
+      "how.3.p": "Gazing at the center for a few seconds (3 by default, adjustable from 2 to 5) completes the code. If it matches a word in the book, the app speaks it aloud through the device speaker.",
 
       "dl.eyebrow": "Get the app",
       "dl.h2": "Download EYEUM",
@@ -178,7 +178,7 @@
       "install.contact": "Still stuck? Email contact.eyeum@gmail.com and tell us which device you are using.",
       "install.tech": "For IT and hospital administrators",
       "install.tech.src": "Published from: github.com/aly2027/eye-gaze-als",
-      "install.tech.file": "File: <code>EYEUM.apk</code> \u00b7 version 1.3.3",
+      "install.tech.file": "File: <code>EYEUM.apk</code> \u00b7 version 1.3.4",
       "install.tech.pkg": "Package: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "Your experience matters",
@@ -248,7 +248,7 @@
       "feat.3.h": "소리 내어 읽어줍니다",
       "feat.3.p": "단어를 고르면 기기가 바로 소리 내어 읽어줍니다. 곁에 계신 보호자가 즉시 알아들을 수 있습니다.",
       "feat.4.h": "실제 병상에서 쓸 수 있게",
-      "feat.4.p": "글자를 크고 또렷하게 키웠고, 보호자에게 자주 하시는 말을 미리 담았습니다. 처음부터 환자분이 쓰실 것을 생각하며 만들었습니다.",
+      "feat.4.p": "글자를 화면에 맞춰 크고 또렷하게 보여 드리고, 처음 쓰시는 분을 위한 음성 안내 연습 모드와 보호자에게 자주 하시는 말을 미리 담았습니다. 처음부터 환자분이 쓰실 것을 생각하며 만들었습니다.",
 
       "how.eyebrow": "사용 방법",
       "how.h2": "눈동자를 좌우로 움직여서 코드를 만들면 목소리가 됩니다.",
@@ -257,7 +257,7 @@
       "how.2.h": "좌우로 코드 만들기",
       "how.2.p": "왼쪽을 보면 0이, 오른쪽을 보면 1이 하나씩 입력됩니다. 입력되는 숫자가 화면에 바로 나타나기 때문에 지금까지 무엇을 골랐는지 확인하며 진행할 수 있습니다.",
       "how.3.h": "가운데 보며 말하기",
-      "how.3.p": "가운데를 2초쯤 바라보면 코드가 완성됩니다. 단어판에 있는 말이면 그대로 소리가 나오고, 없는 코드라면 저절로 지워져 다시 시작할 수 있습니다.",
+      "how.3.p": "가운데를 잠시(기본 3초, 설정에서 2~5초로 조절) 바라보면 코드가 완성됩니다. 단어판에 있는 말이면 그대로 소리가 나오고, 없는 코드라면 저절로 지워져 다시 시작할 수 있습니다.",
 
       "dl.eyebrow": "앱 받기",
       "dl.h2": "EYEUM 다운로드",
@@ -328,7 +328,7 @@
       "install.contact": "그래도 설치되지 않으면 contact.eyeum@gmail.com 으로 기기 이름과 함께 알려주세요.",
       "install.tech": "기관·병원 담당자용 확인 정보",
       "install.tech.src": "배포처: github.com/aly2027/eye-gaze-als",
-      "install.tech.file": "파일: <code>EYEUM.apk</code> \u00b7 버전 1.3.3",
+      "install.tech.file": "파일: <code>EYEUM.apk</code> \u00b7 버전 1.3.4",
       "install.tech.pkg": "패키지: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "써보신 이야기를 들려주세요",
