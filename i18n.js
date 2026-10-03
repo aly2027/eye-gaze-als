@@ -178,7 +178,7 @@
       "install.contact": "Still stuck? Email contact.eyeum@gmail.com and tell us which device you are using.",
       "install.tech": "For IT and hospital administrators",
       "install.tech.src": "Published from: github.com/aly2027/eye-gaze-als",
-      "install.tech.file": "File: <code>EYEUM.apk</code> \u00b7 version 1.3.4",
+      "install.tech.file": "File: <code>EYEUM.apk</code> \u00b7 version 1.3.5",
       "install.tech.pkg": "Package: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "Your experience matters",
@@ -328,7 +328,7 @@
       "install.contact": "그래도 설치되지 않으면 contact.eyeum@gmail.com 으로 기기 이름과 함께 알려주세요.",
       "install.tech": "기관·병원 담당자용 확인 정보",
       "install.tech.src": "배포처: github.com/aly2027/eye-gaze-als",
-      "install.tech.file": "파일: <code>EYEUM.apk</code> \u00b7 버전 1.3.4",
+      "install.tech.file": "파일: <code>EYEUM.apk</code> \u00b7 버전 1.3.5",
       "install.tech.pkg": "패키지: <code>org.eyeum.app</code>",
 
       "fb.eyebrow": "써보신 이야기를 들려주세요",
