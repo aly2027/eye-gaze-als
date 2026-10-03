@@ -53,7 +53,7 @@
 
   var DICT = {
     en: {
-      "page.title.index": "EYEUM (눈빛이음) — Communicate with Your Eyes",
+      "page.title.index": "EYEUM (눈빛이음) — Talk with Your Eyes",
       "page.title.privacy": "Privacy Policy — EYEUM",
       "page.title.disclaimer": "Disclaimer & Terms of Use — EYEUM",
 
