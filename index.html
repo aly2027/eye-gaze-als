@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EYEUM — Communicate with Your Eyes</title>
+<title>EYEUM (눈빛이음) — Communicate with Your Eyes</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script src="i18n.js"></script>
@@ -262,6 +262,39 @@
 
   :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://eyeum.org/#website",
+      "name": "EYEUM",
+      "alternateName": ["눈빛이음", "EYEUM 눈빛이음"],
+      "url": "https://eyeum.org/",
+      "inLanguage": ["en", "ko"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://eyeum.org/#app",
+      "name": "EYEUM",
+      "alternateName": "눈빛이음",
+      "url": "https://eyeum.org/",
+      "image": "https://eyeum.org/eyeum-logo.png",
+      "description": "Eye-gaze communication app that helps people living with ALS and other motor neuron diseases communicate again. ALS 환자를 위한 시선 기반 의사소통 앱.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android, iOS",
+      "inLanguage": ["en", "ko"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "email": "contact.eyeum@gmail.com"
+    }
+  ]
+}
+</script>
 </head>
 <body data-title-key="page.title.index">
 
