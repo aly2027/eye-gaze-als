@@ -48,7 +48,7 @@
   .hero h1{font-size:clamp(32px,5vw,44px);margin-bottom:12px}
   .hero .updated{color:var(--ink-soft);font-size:14.5px}
 
-  .lang-switch{display:flex;gap:8px;margin:28px 0 8px}
+  .lang-switch{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 8px}
   .lang-switch button{
     font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;
     padding:8px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);
@@ -76,9 +76,15 @@
   .lang.show{display:block}
   /* Shown before JS runs, so the right language is painted immediately. */
   html[data-lang="en"] #lang-en,
-  html[data-lang="ko"] #lang-ko{display:block}
-  html[data-lang="en"] #lang-ko,
-  html[data-lang="ko"] #lang-en{display:none}
+  html[data-lang="ko"] #lang-ko,
+  html[data-lang="es"] #lang-es,
+  html[data-lang="pt"] #lang-pt,
+  html[data-lang="fr"] #lang-fr{display:block}
+  html:not([data-lang="en"]) #lang-en,
+  html:not([data-lang="ko"]) #lang-ko,
+  html:not([data-lang="es"]) #lang-es,
+  html:not([data-lang="pt"]) #lang-pt,
+  html:not([data-lang="fr"]) #lang-fr{display:none}
 
   :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
 </style>
@@ -102,6 +108,9 @@
     <div class="lang-switch">
       <button id="btn-en" data-lang-btn="en" onclick="GSI18N.set('en')">English</button>
       <button id="btn-ko" data-lang-btn="ko" onclick="GSI18N.set('ko')">한국어</button>
+      <button id="btn-es" data-lang-btn="es" onclick="GSI18N.set('es')">Español</button>
+      <button id="btn-pt" data-lang-btn="pt" onclick="GSI18N.set('pt')">Português</button>
+      <button id="btn-fr" data-lang-btn="fr" onclick="GSI18N.set('fr')">Français</button>
     </div>
   </div>
 
@@ -213,6 +222,174 @@
         </div>
       </section>
     </div>
+
+    <!-- SPANISH -->
+    <div class="lang" id="lang-es">
+      <div class="alert">
+        <strong>Importante: lea esto antes de usar EYEUM.</strong>
+        <p style="margin:8px 0 0">EYEUM es una ayuda para la comunicación, no un dispositivo médico ni un sistema de soporte vital. Nunca dependa solo de esta aplicación en una emergencia ni para comunicaciones vitales. Tenga siempre otra forma de pedir ayuda, como un timbre, una alarma o un cuidador presente.</p>
+      </div>
+
+      <p class="intro">EYEUM es un proyecto de investigación gratuito que ayuda a las personas con ELA a formar y decir palabras con los movimientos de los ojos. Al descargar o usar la aplicación, usted acepta las condiciones siguientes.</p>
+
+      <section class="block">
+        <h2>1. No es un dispositivo médico</h2>
+        <p>EYEUM es una herramienta de apoyo a la comunicación. No es un dispositivo médico y no ha sido revisada ni aprobada por ninguna autoridad reguladora sanitaria. No está destinada a diagnosticar, tratar, curar, vigilar ni prevenir ninguna enfermedad o afección médica.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. No dependa de ella en emergencias</h2>
+        <p>La aplicación incluye frases urgentes (por ejemplo, «No puedo respirar» o «Aspiración»). Se ofrecen solo por comodidad. Como cualquier software o hardware, EYEUM puede fallar por las condiciones de la cámara o de la iluminación, la batería baja, un error de software, un problema del dispositivo u otras causas.</p>
+        <p><strong>Nunca debe depender de EYEUM como única forma de comunicarse en una emergencia o ante necesidades vitales.</strong> Mantenga siempre un medio fiable alternativo para pedir ayuda y, cuando corresponda, asegúrese de que haya un cuidador presente.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. Precisión y limitaciones</h2>
+        <p>La detección de la mirada depende de la iluminación, la posición de la cámara, la postura y el estado del usuario, y de cómo la ELA afecta con el tiempo a los movimientos de los ojos. La detección puede no ser perfecta y pueden producirse selecciones incorrectas. La velocidad y la fiabilidad de la aplicación varían según la persona y la situación.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. No es consejo médico</h2>
+        <p>Nada de lo que contiene la aplicación o este sitio web constituye consejo médico, y el uso de EYEUM no sustituye la consulta con profesionales sanitarios cualificados. Cualquier decisión sobre los cuidados, el tratamiento o las necesidades de comunicación debe tomarse junto con un profesional de la salud.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. Para cuidadores y organizaciones</h2>
+        <p>Antes de confiar en EYEUM con una persona con ELA, los cuidadores y los profesionales clínicos deben probarla a fondo y valorar si es adecuada para la situación, las capacidades y el entorno concretos de esa persona.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. «Tal cual», sin garantía</h2>
+        <p>EYEUM se ofrece de forma gratuita, «tal cual» y «según disponibilidad», como proyecto de investigación. En la máxima medida permitida por la ley, no ofrecemos garantías de ningún tipo ni aceptamos responsabilidad por pérdidas, lesiones o daños derivados del uso de la aplicación o de la imposibilidad de usarla. Usted la utiliza bajo su propio riesgo.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. Cambios</h2>
+        <p>Podemos actualizar estas condiciones a medida que avance el proyecto. La fecha que aparece en la parte superior de esta página indica cuándo se modificaron por última vez.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. Contacto</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">¿Tiene preguntas sobre este aviso? Escríbanos:</p>
+          <p style="margin-bottom:0"><strong>Correo electrónico:</strong> <a href="mailto:contact.eyeum@gmail.com">contact.eyeum@gmail.com</a></p>
+        </div>
+      </section>
+
+      <p class="intro" style="font-size:13px;margin-top:24px">Este texto es una traducción del original en inglés. Si hubiera diferencias entre ambas versiones, prevalece la versión en inglés.</p>
+    </div>
+
+    <!-- PORTUGUESE -->
+    <div class="lang" id="lang-pt">
+      <div class="alert">
+        <strong>Importante: leia antes de usar o EYEUM.</strong>
+        <p style="margin:8px 0 0">O EYEUM é uma ajuda para a comunicação, não um dispositivo médico nem um sistema de suporte à vida. Nunca dependa só dele numa emergência ou em qualquer comunicação vital. Tenha sempre outra forma de pedir ajuda, como uma campainha, um alarme ou um cuidador presente.</p>
+      </div>
+
+      <p class="intro">O EYEUM é um projeto de pesquisa gratuito que ajuda pessoas com ELA a formar e falar palavras com os movimentos dos olhos. Ao baixar ou usar o aplicativo, você concorda com os termos abaixo.</p>
+
+      <section class="block">
+        <h2>1. Não é um dispositivo médico</h2>
+        <p>O EYEUM é uma ferramenta de apoio à comunicação. Não é um dispositivo médico e não foi avaliado nem aprovado por nenhuma autoridade reguladora de saúde. Não se destina a diagnosticar, tratar, curar, monitorar ou prevenir qualquer doença ou condição médica.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. Não dependa dele em emergências</h2>
+        <p>O aplicativo inclui frases urgentes (por exemplo, «Falta de ar» ou «Aspiração»). Elas existem apenas por conveniência. Como qualquer software ou hardware, o EYEUM pode falhar por causa de condições da câmera ou da iluminação, bateria fraca, erro de software, problema no aparelho ou outras causas.</p>
+        <p><strong>Você nunca deve depender do EYEUM como única forma de se comunicar numa emergência ou em necessidades vitais.</strong> Mantenha sempre um meio alternativo confiável de pedir ajuda e, quando for o caso, garanta a presença de um cuidador.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. Precisão e limitações</h2>
+        <p>A detecção do olhar depende da iluminação, da posição da câmera, da postura e do estado do usuário, e de como a ELA afeta os movimentos dos olhos ao longo do tempo. A detecção pode não ser perfeita e escolhas incorretas podem acontecer. A velocidade e a confiabilidade do aplicativo variam conforme a pessoa e a situação.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. Não é orientação médica</h2>
+        <p>Nada no aplicativo ou neste site constitui orientação médica, e o uso do EYEUM não substitui a consulta com profissionais de saúde qualificados. Qualquer decisão sobre cuidados, tratamento ou necessidades de comunicação deve ser tomada junto com um profissional de saúde.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. Para cuidadores e organizações</h2>
+        <p>Antes de contar com o EYEUM para uma pessoa com ELA, cuidadores e profissionais clínicos devem testá-lo bem e avaliar se ele é adequado à situação, às capacidades e ao ambiente específicos dessa pessoa.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. «No estado em que se encontra», sem garantia</h2>
+        <p>O EYEUM é oferecido gratuitamente, «no estado em que se encontra» e «conforme disponível», como projeto de pesquisa. Na máxima extensão permitida por lei, não oferecemos garantias de nenhum tipo e não aceitamos responsabilidade por perdas, lesões ou danos decorrentes do uso do aplicativo ou da impossibilidade de usá-lo. Você o utiliza por sua conta e risco.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. Alterações</h2>
+        <p>Podemos atualizar estes termos à medida que o projeto avança. A data no topo desta página indica quando foram alterados pela última vez.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. Contato</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">Dúvidas sobre este aviso? Fale conosco:</p>
+          <p style="margin-bottom:0"><strong>E-mail:</strong> <a href="mailto:contact.eyeum@gmail.com">contact.eyeum@gmail.com</a></p>
+        </div>
+      </section>
+
+      <p class="intro" style="font-size:13px;margin-top:24px">Este texto é uma tradução do original em inglês. Em caso de divergência entre as versões, prevalece a versão em inglês.</p>
+    </div>
+
+    <!-- FRENCH -->
+    <div class="lang" id="lang-fr">
+      <div class="alert">
+        <strong>Important : à lire avant d'utiliser EYEUM.</strong>
+        <p style="margin:8px 0 0">EYEUM est une aide à la communication, et non un dispositif médical ni un système de maintien en vie. Ne comptez jamais uniquement sur lui en cas d'urgence ou pour une communication vitale. Gardez toujours un autre moyen d'appeler à l'aide, comme une sonnette, une alarme ou la présence d'un aidant.</p>
+      </div>
+
+      <p class="intro">EYEUM est un projet de recherche gratuit qui aide les personnes atteintes de SLA à former et prononcer des mots avec les mouvements des yeux. En téléchargeant ou en utilisant l'application, vous acceptez les conditions ci-dessous.</p>
+
+      <section class="block">
+        <h2>1. Ce n'est pas un dispositif médical</h2>
+        <p>EYEUM est un outil d'aide à la communication. Ce n'est pas un dispositif médical et il n'a été ni examiné ni approuvé par aucune autorité de réglementation sanitaire. Il n'est pas destiné à diagnostiquer, traiter, guérir, surveiller ou prévenir une maladie ou un état de santé.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. Ne pas s'y fier en cas d'urgence</h2>
+        <p>L'application comprend des phrases urgentes (par exemple « Je ne respire pas » ou « Aspiration »). Elles sont proposées uniquement par commodité. Comme tout logiciel ou matériel, EYEUM peut tomber en panne : conditions de caméra ou d'éclairage, batterie faible, erreur logicielle, problème de l'appareil ou autres causes.</p>
+        <p><strong>Vous ne devez jamais compter sur EYEUM comme seul moyen de communiquer en cas d'urgence ou pour des besoins vitaux.</strong> Gardez toujours un autre moyen fiable d'appeler à l'aide et, le cas échéant, assurez la présence d'un aidant.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. Précision et limites</h2>
+        <p>La détection du regard dépend de l'éclairage, de la position de la caméra, de la posture et de l'état de l'utilisateur, ainsi que de l'évolution des mouvements oculaires avec la SLA. La détection peut être imparfaite et des sélections erronées peuvent se produire. La rapidité et la fiabilité de l'application varient selon les personnes et les situations.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. Ce n'est pas un avis médical</h2>
+        <p>Rien dans l'application ni sur ce site ne constitue un avis médical, et l'utilisation d'EYEUM ne remplace pas la consultation de professionnels de santé qualifiés. Toute décision concernant les soins, le traitement ou les besoins de communication doit être prise avec un professionnel de santé.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. Pour les aidants et les organisations</h2>
+        <p>Avant de s'appuyer sur EYEUM avec une personne atteinte de SLA, les aidants et les cliniciens doivent le tester soigneusement et juger s'il convient à la situation, aux capacités et à l'environnement propres à cette personne.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. « En l'état », sans garantie</h2>
+        <p>EYEUM est fourni gratuitement, « en l'état » et « selon disponibilité », dans le cadre d'un projet de recherche. Dans toute la mesure permise par la loi, nous n'offrons aucune garantie d'aucune sorte et déclinons toute responsabilité pour toute perte, blessure ou dommage résultant de l'utilisation de l'application ou de l'impossibilité de l'utiliser. Vous l'utilisez à vos propres risques.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. Modifications</h2>
+        <p>Nous pouvons mettre à jour ces conditions au fil du projet. La date en haut de cette page indique la dernière modification.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. Contact</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">Des questions sur cet avertissement ? Écrivez-nous :</p>
+          <p style="margin-bottom:0"><strong>E-mail :</strong> <a href="mailto:contact.eyeum@gmail.com">contact.eyeum@gmail.com</a></p>
+        </div>
+      </section>
+
+      <p class="intro" style="font-size:13px;margin-top:24px">Ce texte est une traduction de l'original anglais. En cas de divergence entre les deux versions, la version anglaise fait foi.</p>
+    </div>
   </article>
 </div>
 
@@ -230,6 +407,18 @@
     if(!el) return;
     if(lang === "ko"){
       el.textContent = d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일";
+    } else if(lang === "es"){
+      var meses = ["enero","febrero","marzo","abril","mayo","junio",
+                   "julio","agosto","septiembre","octubre","noviembre","diciembre"];
+      el.textContent = d.getDate() + " de " + meses[d.getMonth()] + " de " + d.getFullYear();
+    } else if(lang === "pt"){
+      var mesesPt = ["janeiro","fevereiro","março","abril","maio","junho",
+                     "julho","agosto","setembro","outubro","novembro","dezembro"];
+      el.textContent = d.getDate() + " de " + mesesPt[d.getMonth()] + " de " + d.getFullYear();
+    } else if(lang === "fr"){
+      var mois = ["janvier","février","mars","avril","mai","juin",
+                  "juillet","août","septembre","octobre","novembre","décembre"];
+      el.textContent = d.getDate() + " " + mois[d.getMonth()] + " " + d.getFullYear();
     } else {
       var months = ["January","February","March","April","May","June",
                     "July","August","September","October","November","December"];

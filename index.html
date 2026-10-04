@@ -236,9 +236,9 @@
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
   @media(max-width:680px){.foot-grid{grid-template-columns:1fr;gap:28px}}
 
-  /* Hide the page for a moment when a translation is pending, so Korean
-     visitors never see English text flash first. i18n.js always reveals it. */
-  html[data-lang="ko"] body{opacity:0}
+  /* Hide the page for a moment when a translation is pending, so visitors in
+     another language never see English text flash first. i18n.js always reveals it. */
+  html:not([data-lang="en"]) body{opacity:0}
   html.i18n-ready body{opacity:1;transition:opacity .12s ease}
   /* Site language switch in the nav */
   .lang-nav{display:flex;gap:6px;margin-left:18px}
@@ -250,6 +250,18 @@
   .lang-nav button:hover{border-color:var(--teal);color:var(--teal)}
   .lang-nav button.active{background:var(--teal);border-color:var(--teal);color:#fff}
   @media(max-width:520px){.lang-nav{margin-left:10px}.lang-nav button{padding:6px 10px;font-size:12px}}
+  /* Language drop-down (scales to any number of languages) */
+  .lang-select-wrap{position:relative;display:inline-flex;align-items:center}
+  .lang-globe{position:absolute;left:11px;font-size:13px;line-height:1;pointer-events:none}
+  .lang-nav select{
+    font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
+    padding:6px 28px 6px 31px;border-radius:999px;border:1.5px solid var(--line);
+    color:var(--ink-soft);-webkit-appearance:none;-moz-appearance:none;appearance:none;
+    background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236b7280' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 11px center;
+    transition:border-color .2s,color .2s;
+  }
+  .lang-nav select:hover,.lang-nav select:focus-visible{border-color:var(--teal);color:var(--teal);outline:none}
+  @media(max-width:520px){.lang-nav select{padding:6px 22px 6px 27px;font-size:12px;background-position:right 8px center}.lang-globe{left:9px}}
 
   /* Korean line breaking.
      Korean has no spaces inside a phrase, so the browser will happily split
@@ -278,7 +290,7 @@
       "name": "EYEUM",
       "alternateName": ["눈빛이음", "EYEUM 눈빛이음"],
       "url": "https://eyeum.org/",
-      "inLanguage": ["en", "ko"]
+      "inLanguage": ["en", "ko", "es", "pt", "fr"]
     },
     {
       "@type": "SoftwareApplication",
@@ -290,7 +302,7 @@
       "description": "Eye-gaze communication app that helps people living with ALS and other motor neuron diseases communicate again. ALS 환자를 위한 시선 기반 의사소통 앱.",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "Android, iOS",
-      "inLanguage": ["en", "ko"],
+      "inLanguage": ["en", "ko", "es", "pt", "fr"],
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -318,9 +330,17 @@
     </nav>
     <div style="display:flex;align-items:center">
       <a href="#download" class="nav-cta" data-i18n="nav.cta">Get the app</a>
-      <div class="lang-nav" role="group" aria-label="Site language">
-        <button type="button" data-lang-btn="en" onclick="GSI18N.set('en')">EN</button>
-        <button type="button" data-lang-btn="ko" onclick="GSI18N.set('ko')">한국어</button>
+      <div class="lang-nav">
+        <label class="lang-select-wrap">
+          <span class="lang-globe" aria-hidden="true">🌐</span>
+          <select data-lang-select aria-label="Language / 언어 / Idioma" onchange="GSI18N.set(this.value)">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="fr">Français</option>
+          </select>
+        </label>
       </div>
     </div>
   </div>
@@ -615,7 +635,7 @@
                 <summary data-i18n="install.tech">기관·병원 담당자용 확인 정보</summary>
                 <ul>
                   <li data-i18n="install.tech.src">배포처: github.com/aly2027/eye-gaze-als</li>
-                  <li data-i18n="install.tech.file">파일: <code>EYEUM.apk</code> · 버전 1.3.5</li>
+                  <li data-i18n="install.tech.file">파일: <code>EYEUM.apk</code> · 버전 1.4.0</li>
                   <li data-i18n="install.tech.pkg">패키지: <code>org.eyeum.app</code></li>
                 </ul>
               </details>
@@ -688,9 +708,15 @@
     // Short version (quick start)
     quickEn: "ALS_EyeGaze_QuickStart_EN.pdf",
     quickKr: "ALS_EyeGaze_QuickStart_KR.pdf",
+    quickEs: "ALS_EyeGaze_QuickStart_ES.pdf",
+    quickPt: "ALS_EyeGaze_QuickStart_PT.pdf",
+    quickFr: "ALS_EyeGaze_QuickStart_FR.pdf",
     // Full version
     fullEn:  "ALS_EyeGaze_UserManual_EN.pdf",
-    fullKr:  "ALS_EyeGaze_UserManual_KR.pdf"
+    fullKr:  "ALS_EyeGaze_UserManual_KR.pdf",
+    fullEs:  "ALS_EyeGaze_UserManual_ES.pdf",
+    fullPt:  "ALS_EyeGaze_UserManual_PT.pdf",
+    fullFr:  "ALS_EyeGaze_UserManual_FR.pdf"
   };
   var FEEDBACK_FORM = "https://forms.gle/RQ2eA28rfcZmXmBb9";
 
@@ -732,8 +758,8 @@
 
   // Manual picker: language toggle switches both the short and the full version.
   // Defaults to the browser's language, then the reader can change it.
-  // Note: the key "ko" is the browser language code (navigator.language);
-  // the PDF files themselves all use the _KR suffix.
+  // Note: the keys are language codes ("ko", "es", "pt", "fr"); the Korean PDF
+  // files use the _KR suffix, the others _ES / _PT / _FR.
   var GUIDES = {
     en: {
       hint: "Start with the quick guide; the full manual covers setup and troubleshooting in detail.",
@@ -748,6 +774,27 @@
                ready: "빠른 시작 안내 (PDF)", soon: "빠른 시작 안내 — 준비 중" },
       full:  { url: LINKS.fullKr,  file: "ALS_EyeGaze_UserManual_KR.pdf",
                ready: "전체 사용 설명서 (PDF)", soon: "전체 사용 설명서 — 준비 중" }
+    },
+    es: {
+      hint: "Empiece por la guía rápida; el manual completo explica en detalle la configuración y la solución de problemas.",
+      quick: { url: LINKS.quickEs, file: "ALS_EyeGaze_QuickStart_ES.pdf",
+               ready: "Guía de inicio rápido (PDF)", soon: "Guía rápida — próximamente" },
+      full:  { url: LINKS.fullEs,  file: "ALS_EyeGaze_UserManual_ES.pdf",
+               ready: "Manual del usuario completo (PDF)", soon: "Manual completo — próximamente" }
+    },
+    pt: {
+      hint: "Comece pelo guia rápido; o manual completo explica em detalhes a configuração e a solução de problemas.",
+      quick: { url: LINKS.quickPt, file: "ALS_EyeGaze_QuickStart_PT.pdf",
+               ready: "Guia de início rápido (PDF)", soon: "Guia rápido — em breve" },
+      full:  { url: LINKS.fullPt,  file: "ALS_EyeGaze_UserManual_PT.pdf",
+               ready: "Manual do usuário completo (PDF)", soon: "Manual completo — em breve" }
+    },
+    fr: {
+      hint: "Commencez par le guide rapide ; le manuel complet détaille l'installation et le dépannage.",
+      quick: { url: LINKS.quickFr, file: "ALS_EyeGaze_QuickStart_FR.pdf",
+               ready: "Guide de démarrage rapide (PDF)", soon: "Guide rapide — bientôt" },
+      full:  { url: LINKS.fullFr,  file: "ALS_EyeGaze_UserManual_FR.pdf",
+               ready: "Manuel d'utilisation complet (PDF)", soon: "Manuel complet — bientôt" }
     }
   };
 
@@ -774,7 +821,7 @@
     var g = GUIDES[lang] || GUIDES.en;
 
     ["lang-", "play-lang-"].forEach(function(prefix){
-      ["en","ko"].forEach(function(code){
+      ["en","ko","es","pt","fr"].forEach(function(code){
         var btn = document.getElementById(prefix + code);
         if(!btn) return;
         var on = (code === lang);
@@ -793,7 +840,7 @@
   }
 
   ["lang-", "play-lang-"].forEach(function(prefix){
-    ["en","ko"].forEach(function(code){
+    ["en","ko","es","pt","fr"].forEach(function(code){
       var btn = document.getElementById(prefix + code);
       if(btn){ btn.addEventListener("click", function(){ setGuideLang(code); }); }
     });

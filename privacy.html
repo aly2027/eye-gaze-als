@@ -47,7 +47,7 @@
   .hero h1{font-size:clamp(32px,5vw,44px);margin-bottom:12px}
   .hero .updated{color:var(--ink-soft);font-size:14.5px}
 
-  .lang-switch{display:flex;gap:8px;margin:28px 0 8px}
+  .lang-switch{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 8px}
   .lang-switch button{
     font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;
     padding:8px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);
@@ -72,9 +72,15 @@
   .lang.show{display:block}
   /* Shown before JS runs, so the right language is painted immediately. */
   html[data-lang="en"] #lang-en,
-  html[data-lang="ko"] #lang-ko{display:block}
-  html[data-lang="en"] #lang-ko,
-  html[data-lang="ko"] #lang-en{display:none}
+  html[data-lang="ko"] #lang-ko,
+  html[data-lang="es"] #lang-es,
+  html[data-lang="pt"] #lang-pt,
+  html[data-lang="fr"] #lang-fr{display:block}
+  html:not([data-lang="en"]) #lang-en,
+  html:not([data-lang="ko"]) #lang-ko,
+  html:not([data-lang="es"]) #lang-es,
+  html:not([data-lang="pt"]) #lang-pt,
+  html:not([data-lang="fr"]) #lang-fr{display:none}
 
   :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
 </style>
@@ -98,6 +104,9 @@
     <div class="lang-switch">
       <button id="btn-en" data-lang-btn="en" onclick="GSI18N.set('en')">English</button>
       <button id="btn-ko" data-lang-btn="ko" onclick="GSI18N.set('ko')">한국어</button>
+      <button id="btn-es" data-lang-btn="es" onclick="GSI18N.set('es')">Español</button>
+      <button id="btn-pt" data-lang-btn="pt" onclick="GSI18N.set('pt')">Português</button>
+      <button id="btn-fr" data-lang-btn="fr" onclick="GSI18N.set('fr')">Français</button>
     </div>
   </div>
 
@@ -229,6 +238,204 @@
         </div>
       </section>
     </div>
+
+    <!-- SPANISH -->
+    <div class="lang" id="lang-es">
+      <div class="intro">
+        Esta Política de privacidad explica cómo la aplicación y el sitio web de EYEUM tratan la información. EYEUM es una herramienta de comunicación que ayuda a las personas con ELA a formar y decir frases con los movimientos de los ojos. La diseñamos con la privacidad como base.
+      </div>
+
+      <div class="highlight">
+        La cámara se usa solo en su dispositivo. EYEUM procesa la imagen de la cámara localmente para detectar hacia dónde mira. Las imágenes y los videos de la cámara nunca se suben, almacenan ni transmiten a ningún lugar. Permanecen en su dispositivo.
+      </div>
+
+      <section class="block">
+        <h2>1. Información que recoge la aplicación</h2>
+        <h3>Datos de la cámara y de la mirada</h3>
+        <p>La aplicación usa la cámara frontal del dispositivo para detectar la posición de los ojos y permitir la selección sin manos. Este procesamiento se realiza íntegramente en su dispositivo y en tiempo real. No grabamos, guardamos, subimos ni compartimos imágenes, videos ni datos de la mirada.</p>
+        <h3>Contenido de la aplicación</h3>
+        <p>Las frases que usted personaliza se guardan localmente en su dispositivo para que la aplicación funcione a su medida. No se nos envían.</p>
+        <p>La aplicación no requiere cuenta y no recoge su nombre, sus contactos, su ubicación ni identificadores publicitarios.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. Información que recoge el sitio web</h2>
+        <p>Si solicita la aplicación mediante el formulario de descarga de nuestro sitio web, puede optar por indicar su dirección de correo electrónico y su perfil (por ejemplo, persona con ELA, cuidador o profesional clínico). No le pedimos su nombre ni el de su organización.</p>
+        <p>Solo recogemos estos datos cuando usted mismo los escribe. Se guardan en una hoja de cálculo privada a la que solo tiene acceso el equipo del proyecto.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. Cómo usamos la información</h2>
+        <ul>
+          <li>Para darle los enlaces de descarga y ayudarle con la instalación.</li>
+          <li>Para enviarle novedades ocasionales sobre la aplicación, si las solicitó.</li>
+          <li>Para entender, de forma agregada, quién usa EYEUM y así poder mejorarla.</li>
+        </ul>
+        <p>No vendemos su información, no la usamos con fines publicitarios ni la compartimos con terceros para sus propios fines.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. Almacenamiento y comunicación de datos</h2>
+        <p>La información que envía a través del sitio web se almacena mediante servicios de Google (Google Sheets y Google Apps Script). Google trata estos datos como nuestro proveedor de servicios. No compartimos su información con nadie más, salvo cuando la ley lo exija.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. Privacidad de los menores</h2>
+        <p>EYEUM está pensada para personas con necesidades de comunicación y sus cuidadores. No recogemos a sabiendas información personal de menores de una forma que requiera un consentimiento que no hayamos obtenido. Si cree que un menor nos ha facilitado información, contáctenos y la eliminaremos.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. Sus opciones y derechos</h2>
+        <p>Puede pedirnos en cualquier momento ver, corregir o eliminar la información que envió a través del sitio web. Como los datos de la cámara y de la mirada nunca salen de su dispositivo, no hay nada que debamos eliminar en ese sentido.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. Cambios en esta política</h2>
+        <p>Podemos actualizar esta política a medida que se desarrolle la aplicación. Cuando lo hagamos, cambiaremos la fecha que aparece en la parte superior de esta página.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. Contacto</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">Si tiene preguntas sobre esta Política de privacidad o sobre su información, escríbanos:</p>
+          <p style="margin-bottom:0"><strong>Correo electrónico:</strong> <a href="mailto:contact.eyeum@gmail.com">contact.eyeum@gmail.com</a></p>
+        </div>
+      </section>
+
+      <p class="intro" style="font-size:13px;margin-top:24px">Este texto es una traducción del original en inglés. Si hubiera diferencias entre ambas versiones, prevalece la versión en inglés.</p>
+    </div>
+
+    <!-- PORTUGUESE -->
+    <div class="lang" id="lang-pt">
+      <div class="intro">
+        Esta Política de privacidade explica como o aplicativo e o site do EYEUM tratam as informações. O EYEUM é uma ferramenta de comunicação que ajuda pessoas com ELA a formar e falar frases com os movimentos dos olhos. Nós o projetamos com a privacidade como base.
+      </div>
+
+      <div class="highlight">
+        A câmera é usada apenas no seu aparelho. O EYEUM processa a imagem da câmera localmente para detectar para onde você está olhando. Imagens e vídeos da câmera nunca são enviados, armazenados ou transmitidos para nenhum lugar. Eles ficam no seu aparelho.
+      </div>
+
+      <section class="block">
+        <h2>1. Informações coletadas pelo aplicativo</h2>
+        <h3>Dados da câmera e do olhar</h3>
+        <p>O aplicativo usa a câmera frontal do aparelho para detectar a posição dos olhos e permitir a seleção sem as mãos. Esse processamento acontece inteiramente no seu aparelho, em tempo real. Não gravamos, salvamos, enviamos nem compartilhamos imagens, vídeos ou dados do olhar.</p>
+        <h3>Conteúdo do aplicativo</h3>
+        <p>As frases que você personaliza ficam salvas localmente no seu aparelho para que o aplicativo funcione do seu jeito. Elas não são enviadas para nós.</p>
+        <p>O aplicativo não exige conta e não coleta seu nome, contatos, localização nem identificadores de publicidade.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. Informações coletadas pelo site</h2>
+        <p>Se você pedir o aplicativo pelo formulário de download do nosso site, pode optar por informar seu e-mail e seu perfil (por exemplo, pessoa com ELA, cuidador ou profissional clínico). Não pedimos seu nome nem o da sua organização.</p>
+        <p>Só coletamos essas informações quando você mesmo as digita. Elas ficam numa planilha privada que apenas a equipe do projeto pode acessar.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. Como usamos as informações</h2>
+        <ul>
+          <li>Para fornecer os links de download e ajudar na instalação.</li>
+          <li>Para enviar novidades ocasionais sobre o aplicativo, se você pediu.</li>
+          <li>Para entender, de forma agregada, quem usa o EYEUM e assim melhorá-lo.</li>
+        </ul>
+        <p>Não vendemos suas informações, não as usamos para publicidade nem as compartilhamos com terceiros para fins próprios deles.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. Armazenamento e compartilhamento de dados</h2>
+        <p>As informações enviadas pelo site são armazenadas com serviços do Google (Google Sheets e Google Apps Script). O Google trata esses dados como nosso prestador de serviços. Não compartilhamos suas informações com mais ninguém, exceto quando exigido por lei.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. Privacidade de crianças</h2>
+        <p>O EYEUM é destinado a pessoas com necessidades de comunicação e a seus cuidadores. Não coletamos intencionalmente informações pessoais de crianças de forma que exija um consentimento que não obtivemos. Se você acredita que uma criança nos forneceu informações, entre em contato e as removeremos.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. Suas escolhas e direitos</h2>
+        <p>Você pode nos pedir a qualquer momento para ver, corrigir ou excluir as informações enviadas pelo site. Como os dados da câmera e do olhar nunca saem do seu aparelho, não há nada a excluir desse lado.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. Alterações nesta política</h2>
+        <p>Podemos atualizar esta política à medida que o aplicativo evolui. Quando isso acontecer, mudaremos a data no topo desta página.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. Contato</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">Se tiver dúvidas sobre esta Política de privacidade ou sobre suas informações, fale conosco:</p>
+          <p style="margin-bottom:0"><strong>E-mail:</strong> <a href="mailto:contact.eyeum@gmail.com">contact.eyeum@gmail.com</a></p>
+        </div>
+      </section>
+
+      <p class="intro" style="font-size:13px;margin-top:24px">Este texto é uma tradução do original em inglês. Em caso de divergência entre as versões, prevalece a versão em inglês.</p>
+    </div>
+
+    <!-- FRENCH -->
+    <div class="lang" id="lang-fr">
+      <div class="intro">
+        Cette Politique de confidentialité explique comment l'application et le site d'EYEUM traitent les informations. EYEUM est un outil de communication qui aide les personnes atteintes de SLA à former et prononcer des phrases avec les mouvements des yeux. Nous l'avons conçu avec la confidentialité comme principe de base.
+      </div>
+
+      <div class="highlight">
+        La caméra est utilisée uniquement sur votre appareil. EYEUM traite l'image de la caméra localement pour détecter où vous regardez. Les images et vidéos de la caméra ne sont jamais envoyées, stockées ni transmises nulle part. Elles restent sur votre appareil.
+      </div>
+
+      <section class="block">
+        <h2>1. Informations collectées par l'application</h2>
+        <h3>Données de la caméra et du regard</h3>
+        <p>L'application utilise la caméra avant de l'appareil pour détecter la position des yeux et permettre une sélection sans les mains. Ce traitement se fait entièrement sur votre appareil, en temps réel. Nous n'enregistrons, ne conservons, n'envoyons ni ne partageons aucune image, vidéo ou donnée de regard.</p>
+        <h3>Contenu de l'application</h3>
+        <p>Les phrases que vous personnalisez sont enregistrées localement sur votre appareil afin que l'application fonctionne pour vous. Elles ne nous sont pas envoyées.</p>
+        <p>L'application ne nécessite pas de compte et ne collecte ni votre nom, ni vos contacts, ni votre position, ni d'identifiants publicitaires.</p>
+      </section>
+
+      <section class="block">
+        <h2>2. Informations collectées par le site</h2>
+        <p>Si vous demandez l'application via le formulaire de téléchargement de notre site, vous pouvez choisir d'indiquer votre adresse e-mail et votre profil (par exemple personne atteinte de SLA, aidant ou clinicien). Nous ne demandons ni votre nom ni celui de votre organisation.</p>
+        <p>Nous ne collectons ces informations que si vous les saisissez vous-même. Elles sont conservées dans une feuille de calcul privée accessible uniquement à l'équipe du projet.</p>
+      </section>
+
+      <section class="block">
+        <h2>3. Utilisation des informations</h2>
+        <ul>
+          <li>Pour vous fournir les liens de téléchargement et une aide à l'installation.</li>
+          <li>Pour vous envoyer des nouvelles occasionnelles sur l'application, si vous l'avez demandé.</li>
+          <li>Pour comprendre, de manière globale, qui utilise EYEUM afin de l'améliorer.</li>
+        </ul>
+        <p>Nous ne vendons pas vos informations, ne les utilisons pas à des fins publicitaires et ne les partageons pas avec des tiers pour leurs propres fins.</p>
+      </section>
+
+      <section class="block">
+        <h2>4. Stockage et partage des données</h2>
+        <p>Les informations envoyées via le site sont stockées au moyen de services Google (Google Sheets et Google Apps Script). Google traite ces données en tant que prestataire de services. Nous ne partageons vos informations avec personne d'autre, sauf obligation légale.</p>
+      </section>
+
+      <section class="block">
+        <h2>5. Protection des enfants</h2>
+        <p>EYEUM est destiné aux personnes ayant des besoins de communication et à leurs aidants. Nous ne collectons pas sciemment d'informations personnelles d'enfants d'une manière qui exigerait un consentement que nous n'avons pas obtenu. Si vous pensez qu'un enfant nous a transmis des informations, contactez-nous et nous les supprimerons.</p>
+      </section>
+
+      <section class="block">
+        <h2>6. Vos choix et vos droits</h2>
+        <p>Vous pouvez à tout moment nous demander de consulter, corriger ou supprimer les informations envoyées via le site. Comme les données de la caméra et du regard ne quittent jamais votre appareil, il n'y a rien à supprimer de ce côté.</p>
+      </section>
+
+      <section class="block">
+        <h2>7. Modifications de cette politique</h2>
+        <p>Nous pouvons mettre à jour cette politique au fil du développement de l'application. Le cas échéant, nous modifierons la date en haut de cette page.</p>
+      </section>
+
+      <section class="block">
+        <h2>8. Contact</h2>
+        <div class="contact-box">
+          <p style="margin-bottom:4px">Pour toute question sur cette Politique de confidentialité ou sur vos informations, écrivez-nous :</p>
+          <p style="margin-bottom:0"><strong>E-mail :</strong> <a href="mailto:contact.eyeum@gmail.com">contact.eyeum@gmail.com</a></p>
+        </div>
+      </section>
+
+      <p class="intro" style="font-size:13px;margin-top:24px">Ce texte est une traduction de l'original anglais. En cas de divergence entre les deux versions, la version anglaise fait foi.</p>
+    </div>
   </article>
 </div>
 
@@ -246,6 +453,18 @@
     if(!el) return;
     if(lang === "ko"){
       el.textContent = d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDate() + "일";
+    } else if(lang === "es"){
+      var meses = ["enero","febrero","marzo","abril","mayo","junio",
+                   "julio","agosto","septiembre","octubre","noviembre","diciembre"];
+      el.textContent = d.getDate() + " de " + meses[d.getMonth()] + " de " + d.getFullYear();
+    } else if(lang === "pt"){
+      var mesesPt = ["janeiro","fevereiro","março","abril","maio","junho",
+                     "julho","agosto","setembro","outubro","novembro","dezembro"];
+      el.textContent = d.getDate() + " de " + mesesPt[d.getMonth()] + " de " + d.getFullYear();
+    } else if(lang === "fr"){
+      var mois = ["janvier","février","mars","avril","mai","juin",
+                  "juillet","août","septembre","octobre","novembre","décembre"];
+      el.textContent = d.getDate() + " " + mois[d.getMonth()] + " " + d.getFullYear();
     } else {
       var months = ["January","February","March","April","May","June",
                     "July","August","September","October","November","December"];
