@@ -179,6 +179,9 @@
   .dl-links{display:grid;gap:12px;margin-top:20px}
   .dl-links a{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border:1.5px solid var(--line);border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;transition:border-color .2s,background .2s}
   .dl-links a:hover{border-color:var(--teal);background:var(--paper)}
+  .dl-links a.dl-primary{background:var(--teal);border-color:var(--teal);color:#fff;font-size:16px;padding:16px 18px}
+  .dl-links a.dl-primary:hover{background:var(--teal);opacity:.92;color:#fff}
+  .dl-links a#dl-android{font-weight:500;font-size:14px}
   .pledge{background:rgba(232,161,58,.12);border:1px solid rgba(232,161,58,.5);border-radius:12px;padding:16px;margin:0 0 20px;display:grid;gap:8px}
   .pledge h4{font-family:"Fraunces",serif;font-size:15.5px;font-weight:600;margin-bottom:5px}
   .pledge p{font-size:13px;color:var(--ink-soft);line-height:1.5}
@@ -474,15 +477,15 @@
         </ul>
 
         <div class="routes">
-          <h3 data-i18n="routes.h">Two ways to get it</h3>
-          <p class="routes-lead" data-i18n="routes.lead">EYEUM is not publicly listed on Google Play yet, so there are two routes.</p>
+          <h3 data-i18n="routes.h">Where to get it</h3>
+          <p class="routes-lead" data-i18n="routes.lead">EYEUM is available on Google Play. An installation file is also offered for devices without Google Play.</p>
           <div class="route">
-            <p class="route-name" data-i18n="routes.a.name">Get it now</p>
-            <p data-i18n="routes.a.body">Download the installation file straight from this site. There's no waiting, but while it installs Android will ask you a few times whether you're sure. Just follow the screens.</p>
+            <p class="route-name" data-i18n="routes.a.name">Google Play (recommended)</p>
+            <p data-i18n="routes.a.body">Installs like any other app, and new versions arrive automatically.</p>
           </div>
           <div class="route">
-            <p class="route-name" data-i18n="routes.b.name">Get it through Google Play</p>
-            <p data-i18n="routes.b.body">Leave a Gmail address in the form and we'll send you an invitation. It takes a few days, but then it installs just like any other app and new versions arrive on their own.</p>
+            <p class="route-name" data-i18n="routes.b.name">Installation file (APK)</p>
+            <p data-i18n="routes.b.body">For devices without Google Play. Download it from this site; while it installs, Android will ask a few times whether you're sure. Just follow the screens.</p>
           </div>
           <p class="route-note" data-i18n="routes.note">The two are treated as separate apps, so only one can be installed at a time. To switch, remove the one you have first.</p>
         </div>
@@ -492,30 +495,9 @@
         <div id="dl-form-view">
           <h3 data-i18n="form.h3">Get the app</h3>
           <p class="sub" data-i18n="form.sub">Only the fields marked <span class="req">*</span> need to be filled in or chosen.</p>
-          <div class="field">
-            <span class="field-label" data-i18n="form.route">How would you like to get it <span class="req">*</span></span>
-            <div class="route-pick">
-              <label class="pick">
-                <input type="radio" name="route" value="now" id="route-now">
-                <span>
-                  <strong data-i18n="routes.a.name">Get it now</strong>
-                  <em data-i18n="form.route.now">File from this site, no waiting</em>
-                </span>
-              </label>
-              <label class="pick">
-                <input type="radio" name="route" value="play" id="route-play">
-                <span>
-                  <strong data-i18n="routes.b.name">Get it through Google Play</strong>
-                  <em data-i18n="form.route.play">Invitation by email, a few days</em>
-                </span>
-              </label>
-            </div>
-            <p class="field-error" id="route-pick-error" data-i18n="form.routeError">Please choose how you'd like to get it.</p>
-          </div>
-          <div class="field" id="email-field" hidden>
-            <label for="email" data-i18n="form.email">Email <span class="req">*</span></label>
+          <div class="field" id="email-field">
+            <label for="email" data-i18n="form.email">Email (optional)</label>
             <input id="email" type="email" autocomplete="email">
-            <p class="field-error" id="email-error" data-i18n="form.emailError">Please enter the Gmail address you use on your phone.</p>
           </div>
           <div class="field">
             <label for="role" data-i18n="form.role">I'm downloading as <span class="req">*</span></label>
@@ -585,8 +567,12 @@
           <h3 data-i18n="success.h3">You're all set</h3>
           <p class="sub" data-i18n="success.sub">Choose your device below. The guides are underneath.</p>
           <div class="dl-links">
+            <a href="#" id="dl-play" class="dl-primary" target="_blank" rel="noopener">
+              <span data-i18n="dl.play">Get it on Google Play</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2.5v19l10.2-9.5L4 2.5zm11.6 8.2L17.9 8.5 6.6 2l9 8.7zm0 2.6-9 8.7 11.3-6.5-2.3-2.2zm4.3-3.4-2.6-1.5-2.4 2.3 2.4 2.3 2.6-1.5c.8-.5.8-1.1 0-1.6z"/></svg>
+            </a>
             <a href="#" id="dl-android">
-              <span data-i18n="dl.android">Android phone or tablet</span>
+              <span data-i18n="dl.apk">No Google Play? Download the installation file (APK)</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0 5-5m-5 5-5-5M4 21h16"/></svg>
             </a>
             <a href="#" id="dl-ios">
@@ -710,6 +696,7 @@
   //   the EYEUM Feedback sheet in the same account.
   var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyC4ZjvPeSPdB_bbES3CJetF2trCiNYB53TOu4dQG9PnBsNUzBLR3Y2zmDtoRq7yjXuTQ/exec";
   var LINKS = {
+    play:    "https://play.google.com/store/apps/details?id=org.eyeum.app",
     android: "https://github.com/aly2027/eye-gaze-als/releases/latest/download/EYEUM.apk",
     ios:     "",   // TestFlight link — add when ready
     // Short version (quick start)
@@ -866,18 +853,6 @@
     this.closest(".field").classList.remove("invalid");
   });
 
-  // Choosing a route shows or hides the email field.
-  var emailField = document.getElementById("email-field");
-  Array.prototype.forEach.call(document.querySelectorAll("input[name=route]"), function(r){
-    r.addEventListener("change", function(){
-      emailField.hidden = (this.value !== "play");
-      var f = this.closest(".field");
-      if(f){ f.classList.remove("invalid"); }
-    });
-  });
-  document.getElementById("email").addEventListener("input", function(){
-    this.closest(".field").classList.remove("invalid");
-  });
 
 
   // Country (required). Names come from the browser in the current site language,
@@ -929,13 +904,12 @@
   if (window.GSI18N && GSI18N.onChange) { GSI18N.onChange(function(l){ renderCountries(l); }); }
 
   // Download gate.
-  // Required: the route, the role, the country, and the disclaimer. Email is required for the Play route.
+  // Required: the role, the country, and the disclaimer. Email is optional.
   document.getElementById("dl-submit").addEventListener("click", function(){
     var email = document.getElementById("email");
     var role = document.getElementById("role");
     var consentPrivacy = document.getElementById("consent-privacy");
     var consentDisclaimer = document.getElementById("consent-disclaimer");
-    var routeEl = document.querySelector("input[name=route]:checked");
 
     function fail(el){
       var f = el.closest(".field");
@@ -944,14 +918,7 @@
       el.scrollIntoView({block:"center", behavior:"smooth"});
     }
 
-    // A route must be chosen.
-    if(!routeEl){
-      fail(document.getElementById("route-now"));
-      return;
-    }
-    var route = routeEl.value;
-
-    // The role is required for both routes.
+    // The role is required.
     if(!role.value){ fail(role); return; }
     role.closest(".field").classList.remove("invalid");
 
@@ -959,12 +926,7 @@
     if(!countrySel.value){ fail(countrySel); return; }
     countrySel.closest(".field").classList.remove("invalid");
 
-    // The Play route needs an address to send the invitation to.
     var emailVal = email.value.trim();
-    if(route === "play" && (!emailVal || emailVal.indexOf("@") < 1)){
-      fail(email);
-      return;
-    }
 
     // The disclaimer must be acknowledged.
     if(!consentDisclaimer.checked){
@@ -973,15 +935,14 @@
       return;
     }
 
-    // The Play route always sends the address — it is the whole point of that route.
-    // On the direct route nothing is sent unless the privacy box was ticked.
+    // The email is sent only if the visitor entered one and ticked the privacy box.
     if(FORM_ENDPOINT && FORM_ENDPOINT.indexOf("http") === 0){
-      var sendEmail = (route === "play") ? emailVal : (consentPrivacy.checked ? emailVal : "");
+      var sendEmail = consentPrivacy.checked ? emailVal : "";
       var payload = {
         email: sendEmail,
         role: role.value,
         country: countrySel.value,
-        route: route,
+        route: "store",
         timestamp: new Date().toISOString()
       };
       // text/plain + no-cors avoids a CORS preflight (Apps Script doesn't answer preflights).
@@ -995,14 +956,8 @@
 
     document.getElementById("dl-form-view").style.display = "none";
 
-    if(route === "play"){
-      document.getElementById("play-email").textContent = emailVal;
-      setGuideLang(window.GSI18N ? GSI18N.get() : "en");
-      document.getElementById("dl-play-view").classList.add("show");
-      return;
-    }
-
-    // Direct route: reveal the download links.
+    // Reveal the links: Google Play first, the APK file as a fallback.
+    wireLink("dl-play", LINKS.play, "");
     wireLink("dl-android", LINKS.android, "");
     wireLink("dl-ios", LINKS.ios, iosSoonLabel());
     setGuideLang(window.GSI18N ? GSI18N.get() : "en");
