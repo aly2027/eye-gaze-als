@@ -316,7 +316,6 @@
   ]
 }
 </script>
-<link rel="canonical" href="https://eyeum.org/">
 <link rel="alternate" hreflang="en" href="https://eyeum.org/">
 <link rel="alternate" hreflang="ko" href="https://eyeum.org/?lang=ko">
 <link rel="alternate" hreflang="es" href="https://eyeum.org/?lang=es">
@@ -324,11 +323,15 @@
 <link rel="alternate" hreflang="fr" href="https://eyeum.org/?lang=fr">
 <link rel="alternate" hreflang="x-default" href="https://eyeum.org/">
 <script>
-  // Each language version is its own canonical page: /?lang=es, /?lang=pt ...
-  // English (or no ?lang) uses the plain address.
+  // One HTML file serves every language (?lang=es, ?lang=pt ...), so the
+  // canonical address is added here rather than written in the HTML: each
+  // language version points to itself, and English uses the plain address.
   (function(){
     var m = /[?&]lang=(ko|es|pt|fr)\b/.exec(location.search);
-    if (m) { document.querySelector('link[rel="canonical"]').href = "https://eyeum.org/?lang=" + m[1]; }
+    var l = document.createElement("link");
+    l.rel = "canonical";
+    l.href = "https://eyeum.org/" + (m ? "?lang=" + m[1] : "");
+    document.head.appendChild(l);
   })();
 </script>
 </head>
