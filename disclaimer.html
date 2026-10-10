@@ -88,6 +88,21 @@
 
   :focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
 </style>
+<link rel="canonical" href="https://eyeum.org/disclaimer.html">
+<link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html">
+<link rel="alternate" hreflang="ko" href="https://eyeum.org/disclaimer.html?lang=ko">
+<link rel="alternate" hreflang="es" href="https://eyeum.org/disclaimer.html?lang=es">
+<link rel="alternate" hreflang="pt" href="https://eyeum.org/disclaimer.html?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://eyeum.org/disclaimer.html?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://eyeum.org/disclaimer.html">
+<script>
+  // Each language version is its own canonical page: /?lang=es, /?lang=pt ...
+  // English (or no ?lang) uses the plain address.
+  (function(){
+    var m = /[?&]lang=(ko|es|pt|fr)\b/.exec(location.search);
+    if (m) { document.querySelector('link[rel="canonical"]').href = "https://eyeum.org/disclaimer.html?lang=" + m[1]; }
+  })();
+</script>
 </head>
 <body data-title-key="page.title.disclaimer">
 

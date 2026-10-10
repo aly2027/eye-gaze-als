@@ -4,8 +4,8 @@
 
   <!-- 메인 페이지 (영어) -->
   <url>
-    <loc>https://eyeum.org/?lang=en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/?lang=en"/>
+    <loc>https://eyeum.org/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/?lang=pt"/>
@@ -16,7 +16,7 @@
   <!-- 메인 페이지 (한국어) -->
   <url>
     <loc>https://eyeum.org/?lang=ko</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/?lang=pt"/>
@@ -27,7 +27,7 @@
   <!-- 메인 페이지 (스페인어) -->
   <url>
     <loc>https://eyeum.org/?lang=es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/?lang=pt"/>
@@ -38,7 +38,7 @@
   <!-- 메인 페이지 (포르투갈어) -->
   <url>
     <loc>https://eyeum.org/?lang=pt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/?lang=pt"/>
@@ -49,18 +49,7 @@
   <!-- 메인 페이지 (프랑스어) -->
   <url>
     <loc>https://eyeum.org/?lang=fr</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/?lang=ko"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/?lang=pt"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/"/>
-  </url>
-
-  <!-- 메인 페이지 (기본 주소) -->
-  <url>
-    <loc>https://eyeum.org/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/?lang=pt"/>
@@ -70,8 +59,8 @@
 
   <!-- 개인정보처리방침 (영어) -->
   <url>
-    <loc>https://eyeum.org/privacy.html?lang=en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html?lang=en"/>
+    <loc>https://eyeum.org/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/privacy.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/privacy.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/privacy.html?lang=pt"/>
@@ -82,7 +71,7 @@
   <!-- 개인정보처리방침 (한국어) -->
   <url>
     <loc>https://eyeum.org/privacy.html?lang=ko</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/privacy.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/privacy.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/privacy.html?lang=pt"/>
@@ -93,7 +82,7 @@
   <!-- 개인정보처리방침 (스페인어) -->
   <url>
     <loc>https://eyeum.org/privacy.html?lang=es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/privacy.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/privacy.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/privacy.html?lang=pt"/>
@@ -104,7 +93,7 @@
   <!-- 개인정보처리방침 (포르투갈어) -->
   <url>
     <loc>https://eyeum.org/privacy.html?lang=pt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/privacy.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/privacy.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/privacy.html?lang=pt"/>
@@ -115,18 +104,7 @@
   <!-- 개인정보처리방침 (프랑스어) -->
   <url>
     <loc>https://eyeum.org/privacy.html?lang=fr</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/privacy.html?lang=ko"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/privacy.html?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/privacy.html?lang=pt"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/privacy.html?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/privacy.html"/>
-  </url>
-
-  <!-- 개인정보처리방침 (기본 주소) -->
-  <url>
-    <loc>https://eyeum.org/privacy.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/privacy.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/privacy.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/privacy.html?lang=pt"/>
@@ -136,8 +114,8 @@
 
   <!-- 고지사항 및 이용약관 (영어) -->
   <url>
-    <loc>https://eyeum.org/disclaimer.html?lang=en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html?lang=en"/>
+    <loc>https://eyeum.org/disclaimer.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/disclaimer.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/disclaimer.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/disclaimer.html?lang=pt"/>
@@ -148,7 +126,7 @@
   <!-- 고지사항 및 이용약관 (한국어) -->
   <url>
     <loc>https://eyeum.org/disclaimer.html?lang=ko</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/disclaimer.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/disclaimer.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/disclaimer.html?lang=pt"/>
@@ -159,7 +137,7 @@
   <!-- 고지사항 및 이용약관 (스페인어) -->
   <url>
     <loc>https://eyeum.org/disclaimer.html?lang=es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/disclaimer.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/disclaimer.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/disclaimer.html?lang=pt"/>
@@ -170,7 +148,7 @@
   <!-- 고지사항 및 이용약관 (포르투갈어) -->
   <url>
     <loc>https://eyeum.org/disclaimer.html?lang=pt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/disclaimer.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/disclaimer.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/disclaimer.html?lang=pt"/>
@@ -181,7 +159,7 @@
   <!-- 고지사항 및 이용약관 (프랑스어) -->
   <url>
     <loc>https://eyeum.org/disclaimer.html?lang=fr</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/disclaimer.html?lang=ko"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/disclaimer.html?lang=es"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/disclaimer.html?lang=pt"/>
@@ -189,15 +167,59 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/disclaimer.html"/>
   </url>
 
-  <!-- 고지사항 및 이용약관 (기본 주소) -->
+  <!-- 데모 영상 (영어) -->
   <url>
-    <loc>https://eyeum.org/disclaimer.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/disclaimer.html?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/disclaimer.html?lang=ko"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/disclaimer.html?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/disclaimer.html?lang=pt"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/disclaimer.html?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/disclaimer.html"/>
+    <loc>https://eyeum.org/demo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/demo.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/demo.html?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/demo.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/demo.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/demo.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/demo.html"/>
+  </url>
+
+  <!-- 데모 영상 (한국어) -->
+  <url>
+    <loc>https://eyeum.org/demo.html?lang=ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/demo.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/demo.html?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/demo.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/demo.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/demo.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/demo.html"/>
+  </url>
+
+  <!-- 데모 영상 (스페인어) -->
+  <url>
+    <loc>https://eyeum.org/demo.html?lang=es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/demo.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/demo.html?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/demo.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/demo.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/demo.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/demo.html"/>
+  </url>
+
+  <!-- 데모 영상 (포르투갈어) -->
+  <url>
+    <loc>https://eyeum.org/demo.html?lang=pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/demo.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/demo.html?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/demo.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/demo.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/demo.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/demo.html"/>
+  </url>
+
+  <!-- 데모 영상 (프랑스어) -->
+  <url>
+    <loc>https://eyeum.org/demo.html?lang=fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://eyeum.org/demo.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://eyeum.org/demo.html?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eyeum.org/demo.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://eyeum.org/demo.html?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://eyeum.org/demo.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eyeum.org/demo.html"/>
   </url>
 
 </urlset>
