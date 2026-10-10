@@ -50,7 +50,7 @@
   .cap-switch .label{font-size:14px;font-weight:600;color:var(--ink-soft);margin-right:4px}
   .cap-switch button{font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:8px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink-soft);transition:all .2s}
   .cap-switch button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
-  .note{font-size:13.5px;color:var(--ink-soft);margin-top:6px}
+  .note{font-size:14px;color:var(--teal-deep);background:#e6f1f0;border-radius:10px;padding:10px 14px;margin-top:10px;max-width:760px}
 
   .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:30px 0 40px}
   @media(max-width:900px){.videos{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
@@ -99,9 +99,12 @@
     <div class="cap-switch" role="group" aria-label="Captions">
       <span class="label" data-i18n="demo.capLabel">Captions:</span>
       <button type="button" data-cap="en">English</button>
+      <button type="button" data-cap="ko">한국어</button>
       <button type="button" data-cap="es">Español</button>
+      <button type="button" data-cap="pt">Português</button>
+      <button type="button" data-cap="fr">Français</button>
     </div>
-    <p class="note" data-i18n="demo.note">The app screens in these videos are shown in English. EYEUM itself is available in English, Korean, Spanish, Portuguese and French.</p>
+    <p class="note" data-i18n="demo.note">These demo videos currently show the app screens in English. In real use, EYEUM runs entirely in the language you choose (menus, phrases and voice), in English, Korean, Spanish, Portuguese or French.</p>
   </div>
 
   <div class="videos">
@@ -142,11 +145,10 @@
 
 <script>
 (function(){
-  // Captioned videos exist in English and Spanish. Spanish pages start with
-  // Spanish captions; every other language starts with English. The buttons
-  // let the visitor switch at any time.
+  // Captioned videos exist in all five site languages. The captions start in
+  // the site language; the buttons let the visitor switch at any time.
   var videos = document.querySelectorAll("video[data-video]");
-  var buttons = document.querySelectorAll(".cap-switch button");
+  var buttons = document.querySelectorAll(".cap-switch button[data-cap]");
   var chosen = null;   // set once the visitor presses a caption button
 
   function setCaptions(cap){
@@ -162,7 +164,8 @@
       }
     });
   }
-  function fromSiteLang(lang){ return lang === "es" ? "es" : "en"; }
+  var CAPS = ["en", "ko", "es", "pt", "fr"];
+  function fromSiteLang(lang){ return CAPS.indexOf(lang) > -1 ? lang : "en"; }
 
   Array.prototype.forEach.call(buttons, function(b){
     b.addEventListener("click", function(){
@@ -179,6 +182,7 @@
       Array.prototype.forEach.call(videos, function(o){ if (o !== v) o.pause(); });
     });
   });
+
 
   setCaptions(fromSiteLang(window.GSI18N ? GSI18N.get() : "en"));
   if (window.GSI18N && GSI18N.onChange) {
